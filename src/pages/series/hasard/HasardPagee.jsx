@@ -1,14 +1,13 @@
 import React from 'react';
-import Title from '../../components/title/Title';
 import { Wrapper } from './styled';
 
-const HomePage = () => {
+const HasardPagee = () => {
 
     return (
         <Wrapper>
-            <Title />
+            hasard!
         </Wrapper>
     );
 };
 
-export default HomePage;
+export default HasardPagee;

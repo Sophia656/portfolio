@@ -6,11 +6,9 @@ export const TitleWrapper = styled.div`
     height: 5vh;
     align-items: center;
     justify-content: flex-end;
-    // background: pink;
 `
 
 export const TitleItem = styled.h1`
-    color: #cabdb0;
     @keyframes slidein {
         0% { color: #ba320009; }
         25% { color: #ba32003e; }
@@ -19,9 +17,7 @@ export const TitleItem = styled.h1`
         100% {color: #ba3100; }
     }
     animation: slidein 300ms;
-    ${props => props.color&&`
-        color: #ba3100;
-    `}
+    color: ${props => props.color || '#cabdb0'};
 `
 
 export const Line = styled.div`

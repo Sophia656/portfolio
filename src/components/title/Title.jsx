@@ -15,9 +15,9 @@ const Title = () => {
             for (let i = 0; i < arr.length; i++) {
                 setTimeout(() => {
                     if (i > 5) {
-                        result.push({let: arr[i], color: true})
+                        result.push({let: arr[i], color: '#ba3100'})
                     } else {
-                        result.push({let: arr[i], color: false})
+                        result.push({let: arr[i], color: '#cabdb0'})
                     }
                     setTitle([...result])
                 }, 300 * (i + 1));
@@ -27,7 +27,7 @@ const Title = () => {
             setSurname(true)
             setTimeout(() => {
                 setSurname(false)
-            }, 10000);
+            }, 3000);
         }, 7000);
     }, [])
 
