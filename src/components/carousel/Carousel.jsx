@@ -1,4 +1,5 @@
 import React, { Children, cloneElement, useEffect, useState } from 'react';
+import Burger from '../burger/Burger';
 import Button from '../UI/button/Button';
 import { AllItemsContainer, Container, Window } from './styled';
 
@@ -7,6 +8,7 @@ const PAGE_WIDTH = 100
 const Carousel = ({children}) => {
     const [pages, setPages] = useState([])
     const [offset, setOffset] = useState(0)
+    const [showBurger, setShowBurger] = useState(false)
 
     useEffect(() => {
         setPages(
@@ -35,9 +37,18 @@ const Carousel = ({children}) => {
             return Math.max((curr - PAGE_WIDTH), maxP)
         })
     }
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShowBurger(true)
+        }, 8700);
+    }, [])
+
     return (
         <Container>
-            <Button handleClick={toLeft} rotate='-90deg' l='0' />
+            {showBurger && <Burger offset={offset} />}
+            {offset !== 0 && <Button offset={offset} handleClick={toLeft} rotate='-90deg' l='0' />}
+            
             <Window>
                 <AllItemsContainer
                 style={{
@@ -49,7 +60,8 @@ const Carousel = ({children}) => {
                     {pages}
                 </AllItemsContainer>
             </Window>
-            <Button handleClick={toRight} rotate='90deg' r='0' />
+            {offset > -500 && <Button offset={offset} handleClick={toRight} rotate='90deg' r='0' />}
+            
         </Container>
     );
 };

@@ -18,6 +18,11 @@ code {
     monospace;
 }
 
+html {
+  overflow: hidden;
+  background: #0a0602;
+}
+
 h1 {
   font-size: 3rem;
 }

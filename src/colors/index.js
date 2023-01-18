@@ -1,2 +1,2 @@
-export const DARK = '#100f0d'
+export const DARK = '#0a0602'
 export const LIGHT = ''

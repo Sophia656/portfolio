@@ -2,14 +2,19 @@ import React, { useEffect, useState } from 'react';
 import arrow from '../../../assets/arrow.png';
 import { Image } from './styled';
 
-const Button = ({rotate, r, l, b, handleClick}) => {
+const Button = ({rotate, r, l, b, handleClick, offset}) => {
     const [vis, setVis] = useState(false)
 
     useEffect(() => {
-        setTimeout(() => {
+        if (offset > -1) {
+            setTimeout(() => {
+                setVis(true)
+            }, 8700)
+        } else {
             setVis(true)
-        }, 8700);
-    }, [])
+        }
+        
+    }, [offset])
     
     return (
         <Image onClick={handleClick} src={arrow} rotate={rotate} r={r} l={l} b={b} visible={vis} />

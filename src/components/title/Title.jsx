@@ -7,7 +7,7 @@ const Title = () => {
     const [showname, setShowname] = useState(false)
 
     useEffect(() => {
-        const arr = [...'sophiaantropova']
+        const arr = [...'sophiantropova']
         const result = []
         setTimeout(() => {
             setSurname(false)
@@ -15,9 +15,11 @@ const Title = () => {
             for (let i = 0; i < arr.length; i++) {
                 setTimeout(() => {
                     if (i > 5) {
-                        result.push({let: arr[i], color: '#ba3100'})
+                        result.push({let: arr[i], color: '#ba3100', back: false})
+                    } else if (i === 5) {
+                        result.push({let: arr[i], color: '#ba3100', back: true})
                     } else {
-                        result.push({let: arr[i], color: '#cabdb0'})
+                        result.push({let: arr[i], color: '#cabdb0', back: false})
                     }
                     setTitle([...result])
                 }, 300 * (i + 1));
@@ -35,7 +37,7 @@ const Title = () => {
         <TitleWrapper>
             {showname &&
                 title.map((i, index) => 
-                    <TitleItem key={index} color={i.color}>{i.let}</TitleItem>
+                    <TitleItem key={index} back={i.back} color={i.color}>{i.let}</TitleItem>
                 )
             }
                 <Line secframe={surname} />
