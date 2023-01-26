@@ -9,6 +9,7 @@ import email_b from '../../assets/email_b.png';
 import telegram_b from '../../assets/telegram_b.png';
 import sharing_b from '../../assets/sharing_b.png';
 
+
 const Footer = () => {
     const [touchInstagram, setTouchInstagram] = useState(false)
     const [touchTelegram, setTouchTelegram] = useState(false)
@@ -43,7 +44,7 @@ const Footer = () => {
                     </SocialIconsLink>
                 </SocialIconsItem>
                 <SocialIconsItem>
-                    <SocialIconsLink href="#">
+                    <SocialIconsLink href="http://localhost:3000">
                         <SocialIconsImg 
                         onMouseEnter={() => setTouchShare(true)} 
                         onMouseOut={() => setTouchShare(false)}

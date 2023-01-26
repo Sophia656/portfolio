@@ -16,6 +16,6 @@ export const Window = styled.div`
 
 export const AllItemsContainer = styled.div`
     height: 100%;
-    margin-right: -500vw;
+    margin-right: -600vw;
     display: flex;
 `

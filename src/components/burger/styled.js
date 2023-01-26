@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 export const Wrapper = styled.div`
     width: 100vw;
@@ -79,7 +80,7 @@ export const ContentBlock = styled.div`
         `}
     }
 `
-export const ContentItem = styled.span`
+export const ContentItem = styled(Link)`
     font-weight: bold;
     opacity: 0;
     padding: 30px;
@@ -95,6 +96,8 @@ export const ContentItem = styled.span`
 	font-size: 1.1rem;
     border-radius: 7px;
     cursor: pointer;
+    text-decoration: none;
+    color: black;
     ${props => props.active&&`
         margin-right: 0.5vw;
         opacity: 1;

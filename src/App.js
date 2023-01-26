@@ -5,20 +5,22 @@ import HomePage from "./pages/home/HomePage";
 import OverviewPage from "./pages/overview/OverviewPage";
 import Documental from "./pages/series/documental/Documental";
 import HasardPagee from "./pages/series/hasard/HasardPagee";
+import {Route, Routes} from 'react-router-dom';
 
 function App() {
 
   return (
-    <div>
-      <Carousel>
-        <HomePage />
-        <OverviewPage />
-        <HasardPagee />
-        <Documental />
-        <FacesPage />
-        <Contacts />
-      </Carousel>
-    </div>
+    <Carousel>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/overview' element={<OverviewPage />} />
+        <Route path='/hasard' element={<HasardPagee />} />
+        <Route path='/documental' element={<Documental />} />
+        <Route path='/faces' element={<FacesPage />} />
+        <Route path='/contacts' element={<Contacts />} />
+        <Route path='*' element={<HomePage />} />
+      </Routes>
+    </Carousel>
   );
 }
 
