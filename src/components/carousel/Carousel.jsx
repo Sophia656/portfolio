@@ -9,6 +9,7 @@ import { paths, RootRoute } from '../../route';
 const PAGE_WIDTH = 100
 
 const Carousel = ({children}) => {
+    console.log('child', children)
     const navigate = useNavigate()
     const [pages, setPages] = useState([])
     const [offset, setOffset] = useState(0)

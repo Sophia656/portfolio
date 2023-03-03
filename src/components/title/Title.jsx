@@ -14,12 +14,12 @@ const Title = () => {
             setShowname(true)
             for (let i = 0; i < arr.length; i++) {
                 setTimeout(() => {
-                    if (i > 5) {
+                    if (i === 5) {
                         result.push({let: arr[i], color: '#ba3100', back: false})
-                    } else if (i === 5) {
-                        result.push({let: arr[i], color: '#ba3100', back: true})
+                    // } else if (i > 5) {
+                    //     result.push({let: arr[i], color: 'black', back: false})
                     } else {
-                        result.push({let: arr[i], color: '#cabdb0', back: false})
+                        result.push({let: arr[i], color: '#020202', back: false})
                     }
                     setTitle([...result])
                 }, 300 * (i + 1));

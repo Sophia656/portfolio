@@ -43,14 +43,14 @@ const Footer = () => {
                         src={touchEmail ? email : email_b} alt="" />
                     </SocialIconsLink>
                 </SocialIconsItem>
-                <SocialIconsItem>
+                {/* <SocialIconsItem>
                     <SocialIconsLink href="http://localhost:3000">
                         <SocialIconsImg 
                         onMouseEnter={() => setTouchShare(true)} 
                         onMouseOut={() => setTouchShare(false)}
                         src={touchShare ? sharing : sharing_b} alt="" />
                     </SocialIconsLink>
-                </SocialIconsItem>
+                </SocialIconsItem> */}
             </SocialIcons>
             <Copyright>
             sophi<DoubleLetter>a</DoubleLetter>ntropova | photography & experience | 2019-2023

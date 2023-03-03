@@ -13,6 +13,7 @@ export const Wrapper = styled.footer`
 
 export const SocialIcons = styled.ul`
     text-align: center;
+    margin-left: 4vw;
 `
 
 export const SocialIconsItem = styled.li`

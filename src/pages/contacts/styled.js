@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    // box-shadow: inset 5px 0 150px gold;
 `
 
 export const Avatar = styled.img`
@@ -24,4 +25,6 @@ export const Description = styled.div`
     width: 30vw;
     height: 70vh;
     color: black;
+    font-weight: 200;
+    font-family: 'Red Hat Mono', monospace;
 `

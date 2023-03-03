@@ -64,6 +64,10 @@ export const Content = styled.div`
     color: black;
     right: 0;
     top: 0;
+    opacity: 0;
+    ${props => props.active&&`
+        opacity: 1;
+    `}
 `
 export const ContentBlock = styled.div`
     &:nth-child(1) {
