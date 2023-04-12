@@ -1,3 +1,3 @@
 export const paths = [
-    '/', '/overview', '/hasard', '/documental', '/faces', '/contacts'
+    '/', '/overview', '/hasard', '/documental', '/personalities', '/contacts'
 ]

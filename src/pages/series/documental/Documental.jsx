@@ -1,47 +1,67 @@
-import React, { useEffect, useState } from 'react';
-import { Image, PhotosLine, Title, Wrapper } from './styled';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { PagesContext } from '../../../components/context/context';
+import Button from '../../../components/UI/button/Button';
+import { Image, PhotosLine, Title, TitleWrapper, Wrapper } from './styled';
 
 const Documental = () => {
-    const [imgs, setImgs] = useState([])
+    const [showMore, setShowMore] = useState(false)
+    const [scroll, setScroll] = useState(0);
+    const { baseHeight, setBaseHeight } = useContext(PagesContext);
 
-    function shuffle() {
-        return 0.5 - Math.random();
-    }
+    // const handleScroll = () => {
+    //     setScroll(window.scrollY);
+    // };
 
-    useEffect(() => {
-        // const arr = []
-        // for (let i = 0; i < 55; i++) {
-        //     arr.push(<img src={require(`src/images/web/documental/${i}.jpg`)} />)
-        // }
-        // console.log(arr)
-    })
+    const handleScrollToBottom = () => {
+        setBaseHeight('fit-content')
+        setShowMore(true)
+        window.scrollTo({
+            top: 750,
+            behavior: "smooth"
+        })
+    };
+
     return (
         <Wrapper>
-            <Title>DOCUMENTAL</Title>
-            <PhotosLine>
-                <Image width='48vw' src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
-                <Image mr='2vw' src={require('../../../images/web/documental/3.jpg')} alt='odsjb' />
-            </PhotosLine>
+            <TitleWrapper>
+                <Title>DOCUMENTAL</Title>
+                <PhotosLine>
+                    <Image w='42vw' hw='44vw' src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
+                    <Image mr='2vw' src={require('../../../images/web/documental/55.jpg')} alt='odsjb' />
+                </PhotosLine>
+                <Button handleClick={() => handleScrollToBottom()} rotate='-180deg' b='0' display={showMore && 'none'} />
+            </TitleWrapper>
+            {showMore &&
+            <div>
+                <PhotosLine>
+                    <Image w='42vw' hw='44vw' src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
+                    <Image mr='2vw' src={require('../../../images/web/documental/55.jpg')} alt='odsjb' />
+                </PhotosLine>
+                <PhotosLine>
+                    <Image w='42vw' hw='44vw' src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
+                    <Image mr='2vw' src={require('../../../images/web/documental/55.jpg')} alt='odsjb' />
+                </PhotosLine>
+                <button onClick={window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })}>kjgsac</button>
+            </div>
+            }
         </Wrapper>
     );
 };
 
 export default Documental;
 
-// function shuffle(arr) {
-//     for (var i = arr.length - 1; i > 0; i--) {
-//         var j = Math.floor(Math.random() * (i + 1));
-//         var temp = arr[i];
-//         arr[i] = arr[j];
-//         arr[j] = temp;
-//     }
-//     return arr;
-// }
-// var array = [0,1,2,3,4,5,6,7,8,9];
-// function shuffle() {
-//     return 0.5 - Math.random();
-//   }
-  
-//   console.log(array.sort(shuffle))
-
-// console.log(shuffle(array));
+// {/* <div>
+//                     <Image width='48vw' src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
+//                     <Image mr='2vw' src={require('../../../images/web/documental/55.jpg')} alt='odsjb' />
+//                 </div>
+//                 <div>
+//                     <Image width='48vw' src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
+//                     <Image mr='2vw' src={require('../../../images/web/documental/55.jpg')} alt='odsjb' />
+//                 </div>
+//                 <div>
+//                     <Image width='48vw' src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
+//                     <Image mr='2vw' src={require('../../../images/web/documental/55.jpg')} alt='odsjb' />
+//                 </div> */}

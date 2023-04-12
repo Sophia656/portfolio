@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    height: 100vh;
+    min-height: 100vh;
+    height: ${props => props.h || 'fit-content'};
     width: 100vw;
     display: flex;
     align-item: center;

@@ -1,19 +1,54 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import { useRef } from 'react';
-import { Image, PhotosLine, Title, Wrapper } from './styled';
+import { Btn, DivWrap, Image, Page, PhotosLine, Title, Wrapper } from './styled';
 
 const HasardPagee = () => {
-    const currref = useRef()
+    // const [pageNumber, setPageNumber] = useState(1)
+    // const disabledPageWidth = '0vw';
+    // const showPageWidth = '50vw'
 
-    console.log(currref)
+    // const [pages, setPages] = useState([])
+
+    // useEffect(() => {
+    //     const pagese = [
+    //         <Page w={disabledPageWidth} id='1' show='false'>1</Page>,
+    //         <Page h='40vh' back='white' w={disabledPageWidth} id='2' show='false'>2</Page>,
+    //         <Page h='60vh' back='grey' w={showPageWidth} id='3' show='true'>3</Page>,
+    //         <Page back='blue' w={disabledPageWidth} id='4' show='false'>4</Page>,
+    //     ]
+    //     setPages(pagese)
+    //     // console.log(pages)
+    //     // pagese.map(page => {
+    //     //     // console.log(page)
+    //     //     if (page.props.show === 'true') {
+    //     //         console.log('kelkaxzcvshvy', page.props.id)
+    //     //     }
+    //     // })
+    // }, [])
+
+    // const handleRight = () => {
+ 
+    // }
     return (
         <Wrapper>
+            {/* <DivWrap>
+                <Btn l='0'>left</Btn>
+                    {pages.map(page =>
+                        page
+                    )} */}
+                    {/* <Page w={disabledPageWidth}>1</Page>
+                    <Page h='40vh' back='white' w={disabledPageWidth}>2</Page>
+                    <Page h='50vh' back='grey' w={showPageWidth}>3</Page>
+                    <Page back='blue' w={disabledPageWidth}>4</Page> */}
+                {/* <Btn r='0' onClick={handleRight()}>right</Btn>
+            </DivWrap> */}
             <Title>HASARD OBJECTIF</Title>
-            <PhotosLine>
-                <Image ref={currref} width='31vw' src='http://drive.google.com/uc?export=view&id=1QRlMYTTlImn3S6J_KJ8Hhk_k_4mRIQ8l' alt='odsjb' />
-                <Image width='17vw' src='http://drive.google.com/uc?export=view&id=1u-xpMrpWgVg4owvtNjpk_pdZHlo_xZ47' alt='odsjb' />
-                <Image mr='2vw' src='http://drive.google.com/uc?export=view&id=14ZppMdecnp_JAizaqGAtyWq057RUaaxY' alt='odsjb' />
-            </PhotosLine>
+            {/* <PhotosLine> */}
+            {/* <Image width='48vw' src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
+                <Image mr='2vw' src={require('../../../images/web/documental/3.jpg')} alt='odsjb' /> */}
+            {/* </PhotosLine> */}
         </Wrapper>
     );
 };

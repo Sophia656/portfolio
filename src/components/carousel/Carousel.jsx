@@ -1,19 +1,19 @@
-import React, { Children, cloneElement, useEffect, useState } from 'react';
+import React, { cloneElement, useContext, useEffect, useRef, useState } from 'react';
 import Burger from '../burger/Burger';
 import Button from '../UI/button/Button';
 import { AllItemsContainer, Container, Window } from './styled';
-import {Route, Routes, useNavigate, useLocation} from 'react-router-dom';
-import { paths, RootRoute } from '../../route';
+import { paths } from '../../route';
+import { PagesContext } from '../context/context';
 
 
 const PAGE_WIDTH = 100
 
 const Carousel = ({children}) => {
-    console.log('child', children)
-    const navigate = useNavigate()
+    const { navigate, location, baseHeight, setBaseHeight } = useContext(PagesContext);
     const [pages, setPages] = useState([])
     const [offset, setOffset] = useState(0)
     const [showBurger, setShowBurger] = useState(false)
+    // const [baseHeight, setBaseHeight] = useState('fit-content')
 
     useEffect(() => {
         const result = []
@@ -29,7 +29,7 @@ const Carousel = ({children}) => {
                     height: '100%',
                     minWidth: `${PAGE_WIDTH}vw`,
                     maxWidth: `${PAGE_WIDTH}vw`,
-                }
+                },
             })
         }))
     }, [])
@@ -38,6 +38,9 @@ const Carousel = ({children}) => {
         setOffset((curr) => {
             return Math.min((curr + PAGE_WIDTH), 0)
         })
+        window.scrollTo(offset, 0);
+        setBaseHeight('100vh')
+
     }
 
     const toRight = () => {
@@ -45,12 +48,18 @@ const Carousel = ({children}) => {
             const maxP = -(PAGE_WIDTH * (pages.length - 1))
             return Math.max((curr - PAGE_WIDTH), maxP)
         })
+        window.scrollTo(offset, 0);
+        setBaseHeight('100vh')
     }
 
     useEffect(() => {
         setTimeout(() => {
             setShowBurger(true)
         }, 8700);
+    }, [])
+
+    useEffect(() => {
+        setOffset(0)
     }, [])
 
     useEffect(() => {
@@ -75,7 +84,7 @@ const Carousel = ({children}) => {
     }, [offset])
 
     return (
-        <Container>
+        <Container h={baseHeight}>
             {showBurger && <Burger offset={offset} setOffset={setOffset} />}
             {offset !== 0 && <Button offset={offset} handleClick={toLeft} rotate='-90deg' l='0' />}
 

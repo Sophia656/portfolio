@@ -1,6 +1,8 @@
 import Carousel from "./components/carousel/Carousel";
-import {Route, Routes} from 'react-router-dom';
-import React from "react";
+import {Route, Routes, useLocation, useNavigate} from 'react-router-dom';
+import React, { useEffect, useRef, useState } from "react";
+import { PagesContext } from "./components/context/context";
+import Magazine from "./components/magazine/Magazine";
 
 const OverviewPage = React.lazy(() => import('./pages/overview/OverviewPage'));
 const Contacts = React.lazy(() => import('./pages/contacts/Contacts'));
@@ -11,15 +13,31 @@ const HasardPagee = React.lazy(() => import('./pages/series/hasard/HasardPagee')
 
 
 function App() {
+  const [height, setHeight] = useState(0)
+  // const [offset, setOffset] = useState(0)
+  // const ref = useRef()
+  const navigate = useNavigate()
+  const location = useLocation()
+  const [baseHeight, setBaseHeight] = useState('fit-content')
+
+  // useEffect(() => {
+  //   console.log(height, location)
+  // }, [offset])
 
   return (
-    <Carousel>
-      {/* <React.Suspense fallback={<div style={{color: 'green'}}>loading...</div>}> */}
+    <PagesContext.Provider value={{
+      height, setHeight, 
+      baseHeight, setBaseHeight, 
+      // ref, offset, setOffset, 
+      navigate, location
+    }}>
+
+    
+    <Magazine>
       <Routes>
-        {/* <Route path='/' element={<HomePage />} /> */}
         <Route path='/' element={
           <React.Suspense fallback={<div style={{color: 'green'}}>loading</div>}>
-              <HomePage/>
+              <HomePage />
           </React.Suspense>
         }/>
         <Route path='/overview' element={
@@ -37,7 +55,7 @@ function App() {
               <Documental/>
           </React.Suspense>
         }/>
-        <Route path='/faces' element={
+        <Route path='/personalities' element={
           <React.Suspense fallback={<div>loading</div>}>
               <FacesPage/>
           </React.Suspense>
@@ -52,15 +70,9 @@ function App() {
               <HomePage/>
           </React.Suspense>
         }/>
-        {/* <Route path='/overview' element={<OverviewPage />} />
-        <Route path='/hasard' element={<HasardPagee />} />
-        <Route path='/documental' element={<Documental />} />
-        <Route path='/faces' element={<FacesPage />} />
-        <Route path='/contacts' element={<Contacts />} />
-        <Route path='*' element={<HomePage />} /> */}
       </Routes>
-      {/* </React.Suspense> */}
-    </Carousel>
+    </Magazine>
+    </PagesContext.Provider>
   );
 }
 

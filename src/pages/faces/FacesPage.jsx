@@ -4,7 +4,7 @@ import { Wrapper } from './styled';
 const FacesPage = () => {
     return (
         <Wrapper>
-            faces
+            personalities
         </Wrapper>
     );
 };

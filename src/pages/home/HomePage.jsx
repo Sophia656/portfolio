@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { PagesContext } from '../../components/context/context';
 import Title from '../../components/title/Title';
 import { Wrapper } from './styled';
 

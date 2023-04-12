@@ -22,7 +22,7 @@ export const TitleItem = styled.h1`
     animation: slidein 300ms;
     color: ${props => props.color || '#cabdb0'};
     transition-duration: 0s;
-        transition-timing-function: easy;
+    transition-timing-function: easy;
     ${props => props.back&&`
         background: -webkit-linear-gradient(left, black, #ba3200b2 90%, #ba3100 20%);
         -webkit-background-clip: text;

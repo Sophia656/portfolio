@@ -2,21 +2,23 @@ import styled from 'styled-components';
 
 
 export const Wrapper = styled.div`
-    z-index: 100;
+    // z-index: 100;
     width: 100vw;
+    // overflow-y: hidden;
     height: 100vh;
+    // max-height: 100vh;
     background: #c3c3c1;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    // box-shadow: inset 5px 0 150px gold;
+    position: relative;
 `
 
 export const Avatar = styled.img`
     width: 25vw;
-    box-shadow: 2px 1px 7px black,
-    -2px -1px 7px black;
+    // box-shadow: 2px 1px 1px black,
+    // -2px -1px 1px black;
 `
 
 export const Description = styled.div`
