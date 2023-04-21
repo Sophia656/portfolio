@@ -1,54 +1,102 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useRef } from 'react';
-import { Btn, DivWrap, Image, Page, PhotosLine, Title, Wrapper } from './styled';
+import React, { useState } from 'react';
+import { Image, ImageDescription, ImageLineWrapper, ImageWrapper, PhotosLine, Title, TitleWrapper, Wrapper } from './styled';
 
 const HasardPagee = () => {
-    // const [pageNumber, setPageNumber] = useState(1)
-    // const disabledPageWidth = '0vw';
-    // const showPageWidth = '50vw'
+    const [showDescription, setShowDescription] = useState(false)
 
-    // const [pages, setPages] = useState([])
-
-    // useEffect(() => {
-    //     const pagese = [
-    //         <Page w={disabledPageWidth} id='1' show='false'>1</Page>,
-    //         <Page h='40vh' back='white' w={disabledPageWidth} id='2' show='false'>2</Page>,
-    //         <Page h='60vh' back='grey' w={showPageWidth} id='3' show='true'>3</Page>,
-    //         <Page back='blue' w={disabledPageWidth} id='4' show='false'>4</Page>,
-    //     ]
-    //     setPages(pagese)
-    //     // console.log(pages)
-    //     // pagese.map(page => {
-    //     //     // console.log(page)
-    //     //     if (page.props.show === 'true') {
-    //     //         console.log('kelkaxzcvshvy', page.props.id)
-    //     //     }
-    //     // })
-    // }, [])
-
-    // const handleRight = () => {
- 
-    // }
     return (
         <Wrapper>
-            {/* <DivWrap>
-                <Btn l='0'>left</Btn>
-                    {pages.map(page =>
-                        page
-                    )} */}
-                    {/* <Page w={disabledPageWidth}>1</Page>
-                    <Page h='40vh' back='white' w={disabledPageWidth}>2</Page>
-                    <Page h='50vh' back='grey' w={showPageWidth}>3</Page>
-                    <Page back='blue' w={disabledPageWidth}>4</Page> */}
-                {/* <Btn r='0' onClick={handleRight()}>right</Btn>
-            </DivWrap> */}
             <Title>HASARD OBJECTIF</Title>
-            {/* <PhotosLine> */}
-            {/* <Image width='48vw' src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
-                <Image mr='2vw' src={require('../../../images/web/documental/3.jpg')} alt='odsjb' /> */}
-            {/* </PhotosLine> */}
+            <PhotosLine>
+                    <ImageLineWrapper>
+                        <ImageWrapper>
+                            <Image
+                            onMouseEnter={() => setShowDescription(true)}
+                            onMouseLeave={() => setShowDescription(false)}
+                            w='42vw'
+                            hw='54vw'
+                            ml={showDescription && '3vw'}
+                            src={require('../../../images/web/hasard/3.jpg')} alt='odsjb' />
+                            <ImageDescription showdesc={showDescription}>from the Summer vision series<br/>June, '21</ImageDescription>
+                        </ImageWrapper>
+                        <ImageWrapper>
+                            <Image 
+                            onMouseEnter={() => setShowDescription(true)} 
+                            onMouseLeave={() => setShowDescription(false)} 
+                            hw='30vw'
+                            ml={showDescription && '-3vw'}
+                            src={require('../../../images/web/hasard/2.jpg')} 
+                            alt='odsjb' />
+                            <ImageDescription showdesc={showDescription}>from the Summer vision series<br/>June, '21</ImageDescription>
+                        </ImageWrapper>
+                    </ImageLineWrapper>
+                    {/* <ImageLineWrapper>
+                        <ImageWrapper>
+                            <Image 
+                            onMouseEnter={() => setShowDescription(true)} 
+                            onMouseLeave={() => setShowDescription(false)} 
+                            hw='48vw'
+                            ml={showDescription && '3vw'}
+                            src={require('../../../images/web/documental/15.jpg')} 
+                            alt='odsjb' />
+                            <ImageDescription showdesc={showDescription}>from the Ballet class series<br/>December, '21</ImageDescription>
+                        </ImageWrapper>
+                        <ImageWrapper>
+                            <Image
+                            onMouseEnter={() => setShowDescription(true)}
+                            onMouseLeave={() => setShowDescription(false)}
+                            w='42vw'
+                            hw='54vw'
+                            ml={showDescription && '-3vw'}
+                            src={require('../../../images/web/hasard/16.jpg')} alt='odsjb' />
+                            <ImageDescription showdesc={showDescription}>from the Ballet class series<br/>December, '21</ImageDescription>
+                        </ImageWrapper>
+                    </ImageLineWrapper> */}
+                    {/* <ImageLineWrapper>
+                        <ImageWrapper>
+                            <Image
+                            onMouseEnter={() => setShowDescription(true)}
+                            onMouseLeave={() => setShowDescription(false)}
+                            w='42vw'
+                            hw='54vw'
+                            ml={showDescription && '3vw'}
+                            src={require('../../../images/web/hasard/52.jpg')} alt='odsjb' />
+                            <ImageDescription showdesc={showDescription}>from the Summer vision series<br/>June, '21</ImageDescription>
+                        </ImageWrapper>
+                        <ImageWrapper>
+                            <Image 
+                            onMouseEnter={() => setShowDescription(true)} 
+                            onMouseLeave={() => setShowDescription(false)} 
+                            hw='48vw'
+                            ml={showDescription && '-3vw'}
+                            src={require('../../../images/web/hasard/45.jpg')} 
+                            alt='odsjb' />
+                            <ImageDescription showdesc={showDescription}>from the Summer vision series<br/>June, '21</ImageDescription>
+                        </ImageWrapper>
+                    </ImageLineWrapper> */}
+                    {/* <ImageLineWrapper>
+                        <ImageWrapper>
+                            <Image 
+                            onMouseEnter={() => setShowDescription(true)} 
+                            onMouseLeave={() => setShowDescription(false)} 
+                            hw='48vw'
+                            ml={showDescription && '3vw'}
+                            src={require('../../../images/web/hasard/26.jpg')} 
+                            alt='odsjb' />
+                            <ImageDescription showdesc={showDescription}>from the Ballet class series<br/>December, '21</ImageDescription>
+                        </ImageWrapper>
+                        <ImageWrapper>
+                            <Image
+                            onMouseEnter={() => setShowDescription(true)}
+                            onMouseLeave={() => setShowDescription(false)}
+                            w='42vw'
+                            hw='54vw'
+                            ml={showDescription && '-3vw'}
+                            src={require('../../../images/web/hasard/2.jpg')} alt='odsjb' />
+                            <ImageDescription showdesc={showDescription}>from the Ballet class series<br/>December, '21</ImageDescription>
+                        </ImageWrapper>
+                    </ImageLineWrapper> */}
+                </PhotosLine>
         </Wrapper>
     );
 };

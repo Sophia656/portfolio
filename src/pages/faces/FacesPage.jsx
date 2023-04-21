@@ -1,10 +1,10 @@
 import React from 'react';
-import { Wrapper } from './styled';
+import { Title, Wrapper } from './styled';
 
 const FacesPage = () => {
     return (
         <Wrapper>
-            personalities
+            <Title>PERSONALITIES</Title>
         </Wrapper>
     );
 };

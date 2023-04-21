@@ -14,21 +14,14 @@ const HasardPagee = React.lazy(() => import('./pages/series/hasard/HasardPagee')
 
 function App() {
   const [height, setHeight] = useState(0)
-  // const [offset, setOffset] = useState(0)
-  // const ref = useRef()
   const navigate = useNavigate()
   const location = useLocation()
   const [baseHeight, setBaseHeight] = useState('fit-content')
-
-  // useEffect(() => {
-  //   console.log(height, location)
-  // }, [offset])
 
   return (
     <PagesContext.Provider value={{
       height, setHeight, 
       baseHeight, setBaseHeight, 
-      // ref, offset, setOffset, 
       navigate, location
     }}>
 

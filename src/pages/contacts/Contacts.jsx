@@ -1,25 +1,29 @@
-import React, { useEffect } from 'react';
-import { Avatar, Description, Wrapper } from './styled';
+import React from 'react';
+import { Avatar, Description, DescWrap, Wrapper } from './styled';
 import avatar from '../../images/web/000.jpg';
 import Footer from '../../components/footer/Footer';
-import { useRef } from 'react';
+import { useState } from 'react';
+import Copyright from '../../components/UI/copyright/Copyright';
 
 const Contacts = () => {
-//     const divBlock = useRef(null);
-  
-//   const showDivWidth = () => {
-//     console.log('contact', divBlock.current.getBoundingClientRect().height);
-//  }
+    const [showCr, setShowCr] = useState(false)
+    const onHandleRightClick = (event) => {
+        event.preventDefault()
+        setShowCr(true)
+        setTimeout(() => {
+            setShowCr(false)
+        }, 1500);
+    }
 
-//  useEffect(() => {
-//     showDivWidth()
-//  }, [])
     return (
         <Wrapper>
-            <Avatar src={avatar} alt="" />
-            <Description>
-                <h4>About</h4>
-            </Description>
+            <DescWrap>
+                {showCr && <Copyright />}
+                <Avatar onContextMenu={onHandleRightClick} src={avatar} alt="" />
+                <Description>
+                    I am commited to a humanistic understanding of life that is centered on the essence of the human being. Where from and content are inextricably linked and the human body is a perfection of his inner world. In other words, the shot captured in an instant is the quintessence of the conscious and the unconscious.
+                </Description>
+            </DescWrap>
             <Footer />
         </Wrapper>
     );

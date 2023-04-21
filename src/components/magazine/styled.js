@@ -22,6 +22,6 @@ export const Page = styled.div`
     width: ${props => props.w || '100vw'};
     height: ${props => props.h || '100vh'};
     background: ${props => props.back || '#0a0602'};
-    transition-duration: 0.7s;
+    transition-duration: 0.8s;
     transition-timing-function: easy-in-out;
 `

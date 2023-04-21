@@ -1,82 +1,83 @@
 import styled from 'styled-components';
-import { DARK } from '../../../colors';
 
 
 export const Wrapper = styled.div`
+    overflow: hidden;
     width: 100vw;
     height: inherit;
-    // position: relative;
-    overflow: hidden;
-    background: ${DARK};
+    display: flex;
+    flex-direction: column;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: ${props => props.mt || '0'}
 `
-
+export const TitleWrapper = styled.div`
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+`
 export const Title = styled.h1`
     color: #cabdb0;
-    // font-weight: 200;
-    // font-family: 'Red Hat Mono', monospace;
+    position: absolute;
+    top: 0;
+    margin-top: 10vh;
 `
 
-// export const PhotosLine = styled.div`
-//     display: flex;
-//     // flex-wrap: wrap;
-//     flex-direction: column;
-//     width: 100vw;
-//     min-height: 90vh;
-//     height: fit-content;
-//     align-items: center;
-//     justify-content: space-between;
-// `
+export const PhotosLine = styled.div`
+    width: 100vw;
+    min-height: 90vh;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 0;
+    margin-top: 14vh;
+`
 
-// export const Image = styled.img`
-//     width: ${props => props.width || '40vw'};
-//     margin-right: ${props => props.mr || 0};
-//     height: auto;
-//     position: relative;
-// `
+export const ImageLineWrapper = styled.div`
+    width: 100vw;
+    height: 75vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+`
 
-// export const ImageWrapper = styled.div`
-//     position: absolute;
-//     // background: pink;
-//     width: ${props => props.width || '30vw'};
-//     height: ${props => props.height || '30vh'};
-//     box-shadow: inset 5px 5px 15px rgba(0,0,0,0.15),
-//     inset -5px -5px 15px rgba(255,255,255,0.15),
-//     5px 5px 15px rgba(0,0,0,0.15),
-//     -5px -5px 15px rgba(255,255,255,0.15);
-// `
+export const ImageWrapper = styled.div`
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+`
 
-// export const DivWrap = styled.div`
-//     width: 50vw;
-//     height: 30vh;
-//     background: green;
-//     display: flex;
-//     // flex-direction: column;
-//     align-items: flex-start;
-//     justify-content: center;
-//     position: relative;
-// `
+export const Image = styled.img`
+    width: ${props => props.w || '25vw'};
+    height: auto;
+    transition-duration: 1.4s;
+    transition-timing-function: easy-in;
+    cursor: pointer;
+    &:hover {
+        width: ${props => props.hw || '37vw'};
+        margin-left: ${props => props.ml || 0};
+    }
+`
 
-// export const Page = styled.div`
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     width: ${props => props.w || '50vw'};
-//     height: ${props => props.h || '30vh'};
-//     background: ${props => props.back || 'pink'};
-// `
-
-// export const Btn = styled.button`
-// cursor: pointer;
-//     z-index: 900;
-//     position: absolute;
-//     width: 5vw;
-//     height: 4vh;
-//     background: red;
-//     margin-top: 13vh;
-//     right: ${props => props.r || 'none'};
-//     left: ${props => props.l || 'none'};
-// `
+export const ImageDescription = styled.div`
+    color: #cabdb0;
+    text-align: center;
+    margin-right: 1.5vw;
+    margin-top: 2vh;
+    opacity: 0;
+    transition-duration: 1s;
+    transition-timing-function: easy-in;
+    ${props => props.showdesc&&`
+        opacity: 1;
+    `}
+`

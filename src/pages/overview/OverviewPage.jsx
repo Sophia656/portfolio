@@ -1,10 +1,10 @@
 import React from 'react';
-import { Wrapper } from './styled';
+import { Title, Wrapper } from './styled';
 
 const OverviewPage = () => {
     return (
         <Wrapper>
-            overview
+            <Title>OVERVIEW</Title>
         </Wrapper>
     );
 };

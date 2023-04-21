@@ -9,11 +9,10 @@ import { PagesContext } from '../context/context';
 const PAGE_WIDTH = 100
 
 const Carousel = ({children}) => {
-    const { navigate, location, baseHeight, setBaseHeight } = useContext(PagesContext);
+    const { navigate, baseHeight, setBaseHeight } = useContext(PagesContext);
     const [pages, setPages] = useState([])
     const [offset, setOffset] = useState(0)
     const [showBurger, setShowBurger] = useState(false)
-    // const [baseHeight, setBaseHeight] = useState('fit-content')
 
     useEffect(() => {
         const result = []

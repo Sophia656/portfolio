@@ -1,52 +1,105 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import { PagesContext } from '../../../components/context/context';
-import Button from '../../../components/UI/button/Button';
-import { Image, PhotosLine, Title, TitleWrapper, Wrapper } from './styled';
+import React from 'react';
+import { useState } from 'react';
+import { Image, ImageDescription, ImageLineWrapper, ImageWrapper, PhotosLine, Title, TitleWrapper, Wrapper } from './styled';
 
 const Documental = () => {
-    const [showMore, setShowMore] = useState(false)
-    const [scroll, setScroll] = useState(0);
-    const { baseHeight, setBaseHeight } = useContext(PagesContext);
-
-    // const handleScroll = () => {
-    //     setScroll(window.scrollY);
-    // };
-
-    const handleScrollToBottom = () => {
-        setBaseHeight('fit-content')
-        setShowMore(true)
-        window.scrollTo({
-            top: 750,
-            behavior: "smooth"
-        })
-    };
+    const [showDescription, setShowDescription] = useState(false)
 
     return (
         <Wrapper>
             <TitleWrapper>
-                <Title>DOCUMENTAL</Title>
+                <Title>DOCUMENTARY PHOTOGRAPHY</Title>
                 <PhotosLine>
-                    <Image w='42vw' hw='44vw' src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
-                    <Image mr='2vw' src={require('../../../images/web/documental/55.jpg')} alt='odsjb' />
+                    <ImageLineWrapper>
+                        <ImageWrapper>
+                            <Image
+                            onMouseEnter={() => setShowDescription(true)}
+                            onMouseLeave={() => setShowDescription(false)}
+                            w='42vw'
+                            hw='54vw'
+                            ml={showDescription && '3vw'}
+                            src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
+                            <ImageDescription showdesc={showDescription}>from the Summer vision series<br/>June, '21</ImageDescription>
+                        </ImageWrapper>
+                        <ImageWrapper>
+                            <Image 
+                            onMouseEnter={() => setShowDescription(true)} 
+                            onMouseLeave={() => setShowDescription(false)} 
+                            hw='48vw'
+                            ml={showDescription && '-3vw'}
+                            src={require('../../../images/web/documental/55.jpg')} 
+                            alt='odsjb' />
+                            <ImageDescription showdesc={showDescription}>from the Summer vision series<br/>June, '21</ImageDescription>
+                        </ImageWrapper>
+                    </ImageLineWrapper>
+                    <ImageLineWrapper>
+                        <ImageWrapper>
+                            <Image 
+                            onMouseEnter={() => setShowDescription(true)} 
+                            onMouseLeave={() => setShowDescription(false)} 
+                            hw='48vw'
+                            ml={showDescription && '3vw'}
+                            src={require('../../../images/web/documental/15.jpg')} 
+                            alt='odsjb' />
+                            <ImageDescription showdesc={showDescription}>from the Ballet class series<br/>December, '21</ImageDescription>
+                        </ImageWrapper>
+                        <ImageWrapper>
+                            <Image
+                            onMouseEnter={() => setShowDescription(true)}
+                            onMouseLeave={() => setShowDescription(false)}
+                            w='42vw'
+                            hw='54vw'
+                            ml={showDescription && '-3vw'}
+                            src={require('../../../images/web/documental/16.jpg')} alt='odsjb' />
+                            <ImageDescription showdesc={showDescription}>from the Ballet class series<br/>December, '21</ImageDescription>
+                        </ImageWrapper>
+                    </ImageLineWrapper>
+                    <ImageLineWrapper>
+                        <ImageWrapper>
+                            <Image
+                            onMouseEnter={() => setShowDescription(true)}
+                            onMouseLeave={() => setShowDescription(false)}
+                            w='42vw'
+                            hw='54vw'
+                            ml={showDescription && '3vw'}
+                            src={require('../../../images/web/documental/52.jpg')} alt='odsjb' />
+                            <ImageDescription showdesc={showDescription}>from the Summer vision series<br/>June, '21</ImageDescription>
+                        </ImageWrapper>
+                        <ImageWrapper>
+                            <Image 
+                            onMouseEnter={() => setShowDescription(true)} 
+                            onMouseLeave={() => setShowDescription(false)} 
+                            hw='48vw'
+                            ml={showDescription && '-3vw'}
+                            src={require('../../../images/web/documental/45.jpg')} 
+                            alt='odsjb' />
+                            <ImageDescription showdesc={showDescription}>from the Summer vision series<br/>June, '21</ImageDescription>
+                        </ImageWrapper>
+                    </ImageLineWrapper>
+                    <ImageLineWrapper>
+                        <ImageWrapper>
+                            <Image 
+                            onMouseEnter={() => setShowDescription(true)} 
+                            onMouseLeave={() => setShowDescription(false)} 
+                            hw='48vw'
+                            ml={showDescription && '3vw'}
+                            src={require('../../../images/web/documental/26.jpg')} 
+                            alt='odsjb' />
+                            <ImageDescription showdesc={showDescription}>from the Ballet class series<br/>December, '21</ImageDescription>
+                        </ImageWrapper>
+                        <ImageWrapper>
+                            <Image
+                            onMouseEnter={() => setShowDescription(true)}
+                            onMouseLeave={() => setShowDescription(false)}
+                            w='42vw'
+                            hw='54vw'
+                            ml={showDescription && '-3vw'}
+                            src={require('../../../images/web/documental/2.jpg')} alt='odsjb' />
+                            <ImageDescription showdesc={showDescription}>from the Ballet class series<br/>December, '21</ImageDescription>
+                        </ImageWrapper>
+                    </ImageLineWrapper>
                 </PhotosLine>
-                <Button handleClick={() => handleScrollToBottom()} rotate='-180deg' b='0' display={showMore && 'none'} />
             </TitleWrapper>
-            {showMore &&
-            <div>
-                <PhotosLine>
-                    <Image w='42vw' hw='44vw' src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
-                    <Image mr='2vw' src={require('../../../images/web/documental/55.jpg')} alt='odsjb' />
-                </PhotosLine>
-                <PhotosLine>
-                    <Image w='42vw' hw='44vw' src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
-                    <Image mr='2vw' src={require('../../../images/web/documental/55.jpg')} alt='odsjb' />
-                </PhotosLine>
-                <button onClick={window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })}>kjgsac</button>
-            </div>
-            }
         </Wrapper>
     );
 };

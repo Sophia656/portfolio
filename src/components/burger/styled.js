@@ -117,3 +117,60 @@ export const ContentItem = styled(Link)`
         font-size: 1.3rem;
     `}
 `
+
+
+export const BurgerMenu = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 75vh;
+    // display: flex;
+    // flex-direction: column;
+    justify-content: stretch;
+    height: 15vh;
+    background: black;
+    width: 100vw;
+    position: relative;
+    opacity: 0;
+    display: none;
+    transition-duration: 0.6s;
+    transition-timing-function: easy-in-out;
+    ${props => props.active&&`
+        opacity: 1;
+        display: flex;
+    `}
+`
+
+export const BurgerItem = styled.div`
+    width: 20vw;
+    height: inherit;
+    background-image: ${props => props.backimg || 'none'};
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: solid grey;
+    // border-top-style: none;
+    // border-bottom-style: none;
+`
+
+export const BurgerItemTitle = styled(Link)`
+    padding: 0.4vw 0.9vh;
+    text-decoration: none;
+    color: black;
+
+    background: #cabdb0a9;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition-duration: 0.8s;
+    transition-timing-function: easy-in-out;
+
+    // padding: 6px 6px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px #cabdb0a9;
+    // background: #cabdb0a9;
+    &:hover {
+        font-size: 1.8rem;
+    }
+`

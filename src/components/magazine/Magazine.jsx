@@ -8,7 +8,7 @@ import { paths } from '../../route';
 import { useRef } from 'react';
 
 const Magazine = ({children}) => {
-    const { navigate, location, baseHeight, setBaseHeight } = useContext(PagesContext);
+    const { navigate } = useContext(PagesContext);
     const disabledPageWidth = '0vw';
     const showPageWidth = '100vw'
     const [pages, setPages] = useState([])
@@ -31,7 +31,7 @@ const Magazine = ({children}) => {
                         show: key === 0 ? true : false,
                     },
                     style: {
-                        height: '300vh',
+                        height: '600vh',
                     },
                 })
             }
@@ -42,7 +42,7 @@ const Magazine = ({children}) => {
                         show: key === 0 ? true : false,
                     },
                     style: {
-                        height: '200vh',
+                        height: '700vh',
                     },
                 })
             } else {
@@ -56,15 +56,6 @@ const Magazine = ({children}) => {
                     },
                 })
             }
-            // return cloneElement(i, {
-            //     helpers: {
-            //         id: key,
-            //         show: key === 0 ? true : false,
-            //     },
-            //     style: {
-            //         height: '100vh',
-            //     },
-            // })
         }))
     }, [])
 
@@ -72,7 +63,6 @@ const Magazine = ({children}) => {
         const currNum = pages.find(p => p.props.helpers.show === true)
 
         const newarr = pages.map(p => {
-            // console.log('p.current.getBoundingClientRect().height', currentPageRef.current.getBoundingClientRect().height)
             if (p.props.helpers.id === currNum.props.helpers.id && p.props.helpers.id === pages.length){
                 return p
             }
@@ -197,7 +187,7 @@ const Magazine = ({children}) => {
                 }
             }))
         }
-        
+
     }, [currentPage])
 
     return (
@@ -213,7 +203,7 @@ const Magazine = ({children}) => {
                     key={page.props.helpers.id} 
                     w={page.props.helpers.show === true ? showPageWidth : disabledPageWidth}
                     h={page.props.style.height}
-                    back={page.props.helpers.show === true && '#cabdb062'}
+                    back={page.props.helpers.show === false && '#cabdb023'}
                     >
                         {page}
                     </Page>
