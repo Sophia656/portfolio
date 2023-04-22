@@ -1,120 +1,82 @@
 import React from 'react';
-import { useState } from 'react';
-import { Image, ImageDescription, ImageLineWrapper, ImageWrapper, PhotosLine, Title, TitleWrapper, Wrapper } from './styled';
+import MyImage from '../../../components/UI/image/MyImage';
+import { ImageLineWrapper, PhotosLine, Title, Wrapper } from './styled';
 
 const Documental = () => {
-    const [showDescription, setShowDescription] = useState(false)
 
     return (
         <Wrapper>
-            <TitleWrapper>
                 <Title>DOCUMENTARY PHOTOGRAPHY</Title>
                 <PhotosLine>
                     <ImageLineWrapper>
-                        <ImageWrapper>
-                            <Image
-                            onMouseEnter={() => setShowDescription(true)}
-                            onMouseLeave={() => setShowDescription(false)}
-                            w='42vw'
-                            hw='54vw'
-                            ml={showDescription && '3vw'}
-                            src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
-                            <ImageDescription showdesc={showDescription}>from the Summer vision series<br/>June, '21</ImageDescription>
-                        </ImageWrapper>
-                        <ImageWrapper>
-                            <Image 
-                            onMouseEnter={() => setShowDescription(true)} 
-                            onMouseLeave={() => setShowDescription(false)} 
-                            hw='48vw'
-                            ml={showDescription && '-3vw'}
-                            src={require('../../../images/web/documental/55.jpg')} 
-                            alt='odsjb' />
-                            <ImageDescription showdesc={showDescription}>from the Summer vision series<br/>June, '21</ImageDescription>
-                        </ImageWrapper>
+                        <MyImage
+                        link={require('../../../images/web/documental/1.jpg')}
+                        desc='from the Summer vision series'
+                        date="June, '21"
+                        w='42vw'
+                        hw='54vw'
+                        ml='3vw'
+                        cr_year='2021'
+                        cr_mt='10vh'
+                        />
+                        <MyImage
+                        link={require('../../../images/web/documental/55.jpg')}
+                        desc='from the Summer vision series'
+                        date="June, '21"
+                        w='35vw'
+                        hw='48vw'
+                        ml='-3vw'
+                        cr_year='2021'
+                        cr_mt='10vh'
+                        />
                     </ImageLineWrapper>
                     <ImageLineWrapper>
-                        <ImageWrapper>
-                            <Image 
-                            onMouseEnter={() => setShowDescription(true)} 
-                            onMouseLeave={() => setShowDescription(false)} 
-                            hw='48vw'
-                            ml={showDescription && '3vw'}
-                            src={require('../../../images/web/documental/15.jpg')} 
-                            alt='odsjb' />
-                            <ImageDescription showdesc={showDescription}>from the Ballet class series<br/>December, '21</ImageDescription>
-                        </ImageWrapper>
-                        <ImageWrapper>
-                            <Image
-                            onMouseEnter={() => setShowDescription(true)}
-                            onMouseLeave={() => setShowDescription(false)}
-                            w='42vw'
-                            hw='54vw'
-                            ml={showDescription && '-3vw'}
-                            src={require('../../../images/web/documental/16.jpg')} alt='odsjb' />
-                            <ImageDescription showdesc={showDescription}>from the Ballet class series<br/>December, '21</ImageDescription>
-                        </ImageWrapper>
+                        <MyImage
+                        link={require('../../../images/web/documental/15.jpg')}
+                        desc='from the Ballet class series'
+                        date="December, '21"
+                        w='35vw'
+                        hw='48vw'
+                        ml='3vw'
+                        cr_year='2021'
+                        cr_mt='10vh'
+                        />
+                        <MyImage
+                        link={require('../../../images/web/documental/16.jpg')}
+                        desc='from the Ballet class series'
+                        date="December, '21"
+                        w='42vw'
+                        hw='54vw'
+                        ml='-3vw'
+                        cr_year='2021'
+                        cr_mt='10vh'
+                        />
                     </ImageLineWrapper>
                     <ImageLineWrapper>
-                        <ImageWrapper>
-                            <Image
-                            onMouseEnter={() => setShowDescription(true)}
-                            onMouseLeave={() => setShowDescription(false)}
-                            w='42vw'
-                            hw='54vw'
-                            ml={showDescription && '3vw'}
-                            src={require('../../../images/web/documental/52.jpg')} alt='odsjb' />
-                            <ImageDescription showdesc={showDescription}>from the Summer vision series<br/>June, '21</ImageDescription>
-                        </ImageWrapper>
-                        <ImageWrapper>
-                            <Image 
-                            onMouseEnter={() => setShowDescription(true)} 
-                            onMouseLeave={() => setShowDescription(false)} 
-                            hw='48vw'
-                            ml={showDescription && '-3vw'}
-                            src={require('../../../images/web/documental/45.jpg')} 
-                            alt='odsjb' />
-                            <ImageDescription showdesc={showDescription}>from the Summer vision series<br/>June, '21</ImageDescription>
-                        </ImageWrapper>
-                    </ImageLineWrapper>
-                    <ImageLineWrapper>
-                        <ImageWrapper>
-                            <Image 
-                            onMouseEnter={() => setShowDescription(true)} 
-                            onMouseLeave={() => setShowDescription(false)} 
-                            hw='48vw'
-                            ml={showDescription && '3vw'}
-                            src={require('../../../images/web/documental/26.jpg')} 
-                            alt='odsjb' />
-                            <ImageDescription showdesc={showDescription}>from the Ballet class series<br/>December, '21</ImageDescription>
-                        </ImageWrapper>
-                        <ImageWrapper>
-                            <Image
-                            onMouseEnter={() => setShowDescription(true)}
-                            onMouseLeave={() => setShowDescription(false)}
-                            w='42vw'
-                            hw='54vw'
-                            ml={showDescription && '-3vw'}
-                            src={require('../../../images/web/documental/2.jpg')} alt='odsjb' />
-                            <ImageDescription showdesc={showDescription}>from the Ballet class series<br/>December, '21</ImageDescription>
-                        </ImageWrapper>
+                        <MyImage
+                        link={require('../../../images/web/documental/52.jpg')}
+                        desc='from the Summer vision series'
+                        date="July, '20"
+                        w='42vw'
+                        hw='54vw'
+                        ml='3vw'
+                        cr_year='2020'
+                        cr_mt='10vh'
+                        />
+                        <MyImage
+                        link={require('../../../images/web/documental/45.jpg')}
+                        desc='from the Summer vision series'
+                        date="July, '20"
+                        w='35vw'
+                        hw='48vw'
+                        ml='-3vw'
+                        cr_year='2020'
+                        cr_mt='10vh'
+                        />
                     </ImageLineWrapper>
                 </PhotosLine>
-            </TitleWrapper>
         </Wrapper>
     );
 };
 
 export default Documental;
-
-// {/* <div>
-//                     <Image width='48vw' src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
-//                     <Image mr='2vw' src={require('../../../images/web/documental/55.jpg')} alt='odsjb' />
-//                 </div>
-//                 <div>
-//                     <Image width='48vw' src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
-//                     <Image mr='2vw' src={require('../../../images/web/documental/55.jpg')} alt='odsjb' />
-//                 </div>
-//                 <div>
-//                     <Image width='48vw' src={require('../../../images/web/documental/1.jpg')} alt='odsjb' />
-//                     <Image mr='2vw' src={require('../../../images/web/documental/55.jpg')} alt='odsjb' />
-//                 </div> */}

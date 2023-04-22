@@ -14,6 +14,7 @@ const Magazine = ({children}) => {
     const [pages, setPages] = useState([])
     const [showBurger, setShowBurger] = useState(false)
     const [currentPage, setCurrentPage] = useState(0)
+    const ref = useRef(null)
     
     useEffect(() => {
         const result = []
@@ -24,6 +25,17 @@ const Magazine = ({children}) => {
         }
 
         setPages(result.map((i, key) => {
+            if (key === 1) {
+                return cloneElement(i, {
+                    helpers: {
+                        id: key,
+                        show: key === 0 ? true : false,
+                    },
+                    style: {
+                        height: '400vh',
+                    },
+                })
+            }
             if (key === 2) {
                 return cloneElement(i, {
                     helpers: {
@@ -43,6 +55,17 @@ const Magazine = ({children}) => {
                     },
                     style: {
                         height: '700vh',
+                    },
+                })
+            }
+            if (key === 4) {
+                return cloneElement(i, {
+                    helpers: {
+                        id: key,
+                        show: key === 0 ? true : false,
+                    },
+                    style: {
+                        height: '300vh',
                     },
                 })
             } else {
@@ -190,6 +213,10 @@ const Magazine = ({children}) => {
 
     }, [currentPage])
 
+    const handleClick = () => {
+        ref.current?.scrollIntoView(0, {behavior: 'smooth'});
+    }
+
     return (
         <Wrapper h={pages.map(p => { // и тут
             if (p.props.helpers.show === true) {
@@ -197,9 +224,10 @@ const Magazine = ({children}) => {
             }
         })}>
             {showBurger && <Burger currentPage={currentPage} setCurrentPage={setCurrentPage} />}
-            {currentPage !== 0 && <Button rotate='-90deg' l='0' handleClick={() => handleLeft()}/>}
+            {currentPage !== 0 && <Button rotate='-90deg' l='0' handleClick={() => {handleLeft(); handleClick()}}/>}
                 {pages.map(page =>
                     <Page 
+                    ref={ref}
                     key={page.props.helpers.id} 
                     w={page.props.helpers.show === true ? showPageWidth : disabledPageWidth}
                     h={page.props.style.height}
@@ -208,11 +236,9 @@ const Magazine = ({children}) => {
                         {page}
                     </Page>
                 )}
-            {currentPage !== 5 && <Button rotate='90deg' r='0' handleClick={() => handleRight()}/>}
+            {currentPage !== 5 && <Button currentPage={currentPage} rotate='90deg' r='0' handleClick={() => {handleRight(); handleClick()}}/>}
         </Wrapper>
     );
 };
 
 export default Magazine;
-
-//  show={pages[0].props.show === true && 'none'}

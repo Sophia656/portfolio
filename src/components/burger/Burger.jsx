@@ -1,41 +1,36 @@
 import React, { useState } from 'react';
 import { DARK } from '../../colors';
-import { BurgerItem, BurgerItemBottom, BurgerItemTitle, BurgerItemTop, BurgerMenu, BurgerWrapper, Content, ContentBlock, ContentItem, Wrapper } from './styled';
-import contacts from '../../images/web/contacts_page.jpg';
-import doc from '../../images/web/documental_page.jpg';
-import hasard from '../../images/web/hasard_page.jpg';
+import { BurgerItem, BurgerItemBottom, BurgerItemTitle, BurgerItemTop, BurgerMenu, BurgerWrapper, Wrapper } from './styled';
+import contacts from '../../images/web/contacts_page2.jpg';
+import doc from '../../images/web/documental_page2.jpg';
+import hasard from '../../images/web/hasard_page2.jpg';
+import personal from '../../images/web/personal_page2.jpg';
+import overview from '../../images/web/overview_page3.jpg';
+import { useEffect } from 'react';
 
 const Burger = ({currentPage, setCurrentPage}) => {
     const [active, setActive] = useState(false)
     const [showSeries, setShowSeries] = useState(false)
+    const [changeDots, setChangeDots] = useState(false)
+
+    useEffect(() => {
+        if (currentPage === 1) {
+            setChangeDots(true)
+        } else if (currentPage === 5) {
+            setChangeDots(true)
+        } else {
+            setChangeDots(false)
+        }
+    }, [currentPage])
 
     return (
     <Wrapper>
         <BurgerWrapper  onClick={() => setActive(!active)} onMouseEnter={() => setShowSeries(false)}>
-            <BurgerItemTop dotback={currentPage === 5 ? DARK : ''} active={active} />
-            <BurgerItemBottom dotback={currentPage === 5 ? DARK : ''} active={active} />
+            <BurgerItemTop dotback={changeDots ? DARK : ''} active={active} />
+            <BurgerItemBottom dotback={changeDots ? DARK : ''} active={active} />
         </BurgerWrapper>
-        {/* <Content active={active}>
-            <ContentBlock>
-                <ContentItem active={active} onMouseEnter={() => {setShowSeries(false)}} onClick={() => {setCurrentPage(1); setActive(false)}} to='/overview'>overview</ContentItem>
-                <ContentItem
-                active={active}
-                onMouseEnter={() => setShowSeries(true)}
-                seriesActive={showSeries}
-                >
-                    series
-                </ContentItem>
-                <ContentItem active={active} onMouseEnter={() => setShowSeries(false)} onClick={() => {setCurrentPage(5); setActive(false)}} to='/contacts'>contacts</ContentItem>
-            </ContentBlock>
-            <ContentBlock active={showSeries}>
-                <ContentItem active={showSeries} onMouseEnter={() => setShowSeries(true)} onClick={() => {setCurrentPage(2); setActive(false)}} to='/hasardobjective'>hasard objectif</ContentItem>
-                <ContentItem active={showSeries} onMouseEnter={() => setShowSeries(true)} onClick={() => {setCurrentPage(3); setActive(false)}} to='/documental'>documental</ContentItem>
-                <ContentItem active={showSeries} onMouseEnter={() => setShowSeries(true)} onClick={() => {setCurrentPage(4); setActive(false)}} to='/personalities'>personalities</ContentItem>
-            </ContentBlock>
-        </Content> */}
-
         <BurgerMenu  active={active}>
-            <BurgerItem backimg={`url(${doc})`}>
+            <BurgerItem backimg={`url(${overview})`}>
                 <BurgerItemTitle 
                 active={active} 
                 onMouseEnter={() => {setShowSeries(false)}} 
@@ -65,7 +60,7 @@ const Burger = ({currentPage, setCurrentPage}) => {
                     DOCUMENTAL
                  </BurgerItemTitle>
             </BurgerItem>
-            <BurgerItem backimg={`url(${doc})`}>
+            <BurgerItem backimg={`url(${personal})`}>
                 <BurgerItemTitle
                  active={showSeries} 
                  onMouseEnter={() => setShowSeries(true)} 

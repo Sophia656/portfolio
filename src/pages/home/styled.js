@@ -5,9 +5,13 @@ export const Wrapper = styled.div`
     width: 100vw;
     height: 100vh;
     background-image: url(${image});
-    background-size: 100vw 100vh;
+    background-size: 100vw 115vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    cursor: none;
+    ${props => props.cursor &&`
+        cursor: default;
+    `}
 `

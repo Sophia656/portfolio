@@ -6,7 +6,10 @@ export const TitleWrapper = styled.div`
     height: 5vh;
     align-items: center;
     justify-content: flex-end;
-    // margin-top: -3vh;
+    cursor: none;
+    ${props => props.cursor &&`
+        cursor: default;
+    `}
 `
 
 export const TitleItem = styled.h1`

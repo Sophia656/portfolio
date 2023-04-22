@@ -4,10 +4,17 @@ import Title from '../../components/title/Title';
 import { Wrapper } from './styled';
 
 const HomePage = () => {
+    const [showCursor, setShowCursor] = useState(false)
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShowCursor(true)
+        }, 7000);
+    }, [])
 
     return (
-        <Wrapper>
-            <Title />
+        <Wrapper cursor={showCursor}>
+            <Title cursor={showCursor} />
         </Wrapper>
     );
 };

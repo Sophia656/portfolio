@@ -8,7 +8,7 @@
     // })
 
 
-
+---------------------------------------------
 
 // function shuffle(arr) {
 //     for (var i = arr.length - 1; i > 0; i--) {
@@ -27,3 +27,87 @@
 //   console.log(array.sort(shuffle))
 
 // console.log(shuffle(array));
+
+---------------------------------------------
+
+//BURGER DOTS_MENU
+{/* <Content active={active}>
+        <ContentBlock>
+            <ContentItem active={active} onMouseEnter={() => {setShowSeries(false)}} onClick={() => {setCurrentPage(1); setActive(false)}} to='/overview'>overview</ContentItem>
+            <ContentItem
+            active={active}
+            onMouseEnter={() => setShowSeries(true)}
+            seriesActive={showSeries}
+            >
+                series
+            </ContentItem>
+            <ContentItem active={active} onMouseEnter={() => setShowSeries(false)} onClick={() => {setCurrentPage(5); setActive(false)}} to='/contacts'>contacts</ContentItem>
+        </ContentBlock>
+        <ContentBlock active={showSeries}>
+            <ContentItem active={showSeries} onMouseEnter={() => setShowSeries(true)} onClick={() => {setCurrentPage(2); setActive(false)}} to='/hasardobjective'>hasard objectif</ContentItem>
+            <ContentItem active={showSeries} onMouseEnter={() => setShowSeries(true)} onClick={() => {setCurrentPage(3); setActive(false)}} to='/documental'>documental</ContentItem>
+            <ContentItem active={showSeries} onMouseEnter={() => setShowSeries(true)} onClick={() => {setCurrentPage(4); setActive(false)}} to='/personalities'>personalities</ContentItem>
+        </ContentBlock>
+    </Content> */}
+        
+export const Content = styled.div`
+    display: flex;
+    flex-direction: row-reverse;
+    position: absolute;
+    color: black;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    ${props => props.active&&`
+        opacity: 1;
+    `}
+`
+export const ContentBlock = styled.div`
+    &:nth-child(1) {
+        z-index: 10;
+    }
+    &:nth-child(2) {
+        z-index: 9;
+        transition: all 0.1s ease;
+        opacity: 0;
+        margin-right: -2vw;
+        ${props => props.active&&`
+            opacity: 1;
+            margin-right: 0;
+        `}
+    }
+`
+export const ContentItem = styled(Link)`
+    font-weight: bold;
+    opacity: 0;
+    padding: 30px;
+    transition: all 1.5s ease;
+	text-align: center;
+    width: 14vw;
+    height: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px 0;
+    margin-right: -15vw;
+	font-size: 1.1rem;
+    border-radius: 7px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    ${props => props.active&&`
+        margin-right: 0.5vw;
+        opacity: 1;
+        background: linear-gradient(to right, #c3c3c1 55%, #00000030);
+        &:hover {
+            color: #ba3100;
+            font-size: 1.3rem;
+            transition: all 1s ease;
+        }
+    `}
+    ${props => props.seriesActive&&`
+        color: #ba3100;
+        font-size: 1.3rem;
+    `}
+`
+---------------------------------------------

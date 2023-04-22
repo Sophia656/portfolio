@@ -1,10 +1,10 @@
 import React from 'react';
 import { CopyrightWrap } from './styled';
 
-const Copyright = () => {
+const Copyright = ({mt, year}) => {
     return (
-        <CopyrightWrap>
-            This photo is Copyright © 2023<br/> Sophia Antropova. All rights reserved.
+        <CopyrightWrap mt={mt}>
+            This photo is Copyright © {year}<br/> Sophia Antropova. All rights reserved.
         </CopyrightWrap>
     );
 };

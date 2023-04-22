@@ -45,8 +45,10 @@ export const Description = styled.div`
     // display: flex;
     // justify-content: center;
     width: 30vw;
+    font-family: 'PT Mono', monospace;
     // height: 25vh;
     color: black;
     font-weight: 200;
-    font-family: 'Red Hat Mono', monospace;
+    font-size: 0.9rem;
+    // font-family: 'Red Hat Mono', monospace;
 `
