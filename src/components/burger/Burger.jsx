@@ -5,7 +5,7 @@ import contacts from '../../images/web/contacts_page2.jpg';
 import doc from '../../images/web/documental_page2.jpg';
 import hasard from '../../images/web/hasard_page2.jpg';
 import personal from '../../images/web/personal_page2.jpg';
-import overview from '../../images/web/overview_page3.jpg';
+import overview from '../../images/web/overview_page4.jpg';
 import { useEffect } from 'react';
 
 const Burger = ({currentPage, setCurrentPage}) => {
@@ -14,9 +14,7 @@ const Burger = ({currentPage, setCurrentPage}) => {
     const [changeDots, setChangeDots] = useState(false)
 
     useEffect(() => {
-        if (currentPage === 1) {
-            setChangeDots(true)
-        } else if (currentPage === 5) {
+        if (currentPage === 5) {
             setChangeDots(true)
         } else {
             setChangeDots(false)

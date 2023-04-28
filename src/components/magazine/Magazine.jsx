@@ -217,6 +217,26 @@ const Magazine = ({children}) => {
         ref.current?.scrollIntoView(0, {behavior: 'smooth'});
     }
 
+    document.onkeydown = checkKey;
+
+    function checkKey(e) {
+  
+        e = e || window.event;
+    
+        // if (e.keyCode === 38) {
+        //   setToTheTop(true)
+        // }
+        // else if (e.keyCode === 40) {
+        //   setToTheBottom(true)
+        // }
+        if (e.keyCode === 37) {
+          handleLeft()
+        }
+        else if (e.keyCode === 39) {
+          handleRight()
+        }
+    }
+
     return (
         <Wrapper h={pages.map(p => { // и тут
             if (p.props.helpers.show === true) {

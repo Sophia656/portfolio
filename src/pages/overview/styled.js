@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     overflow: hidden;
-    background: white;
-    background: #c3c3c1;
+    // background: white;
+    // background: #c3c3c1;
     width: 100vw;
     height: inherit;
     display: flex;
@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
 `
 
 export const Title = styled.h1`
-    color: black;
+    color: #cabdb0;
     position: absolute;
     top: 0;
     margin-top: 10vh;
@@ -43,4 +43,5 @@ export const ImageLineWrapper = styled.div`
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
+    margin-top: ${props => props.mt || 0};
 `

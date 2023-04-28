@@ -17,12 +17,14 @@ function App() {
   const navigate = useNavigate()
   const location = useLocation()
   const [baseHeight, setBaseHeight] = useState('fit-content')
+  const [openModal, setOpenModal] = useState(false)
 
   return (
     <PagesContext.Provider value={{
       height, setHeight, 
       baseHeight, setBaseHeight, 
-      navigate, location
+      navigate, location,
+      openModal, setOpenModal
     }}>
 
     
