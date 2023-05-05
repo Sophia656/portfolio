@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { PagesContext } from '../../../components/context/context';
+import Modal from '../../../components/modal/Modal';
 import MyImage from '../../../components/UI/image/MyImage';
 import { ImageLineWrapper, PhotosLine, Title, Wrapper } from './styled';
 
 const Documental = () => {
+    const { openModal } = useContext(PagesContext)
 
     return (
         <Wrapper>
+            {openModal && <Modal />}
                 <Title>DOCUMENTARY PHOTOGRAPHY</Title>
                 <PhotosLine>
                     <ImageLineWrapper>
@@ -54,7 +58,7 @@ const Documental = () => {
                     </ImageLineWrapper>
                     <ImageLineWrapper>
                         <MyImage
-                        link={require('../../../images/web/documental/52.jpg')}
+                        link={require('../../../images/web/documental/31.jpg')}
                         desc='from the Summer vision series'
                         date="July, '20"
                         w='42vw'
@@ -64,7 +68,7 @@ const Documental = () => {
                         cr_mt='10vh'
                         />
                         <MyImage
-                        link={require('../../../images/web/documental/45.jpg')}
+                        link={require('../../../images/web/documental/41.jpg')}
                         desc='from the Summer vision series'
                         date="July, '20"
                         w='35vw'

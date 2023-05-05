@@ -18,16 +18,33 @@ function App() {
   const location = useLocation()
   const [baseHeight, setBaseHeight] = useState('fit-content')
   const [openModal, setOpenModal] = useState(false)
+  const [modalSrc, setModalSrc] = useState('')
+  const [modalCrYear, setModalCrYear] = useState('')
+  const [scrollTop, setScrollTop] = useState(0);
+
+  useEffect(() => {
+    console.log(scrollTop)
+    const handleScroll = (event) => {
+      setScrollTop(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrollTop]);
 
   return (
     <PagesContext.Provider value={{
       height, setHeight, 
       baseHeight, setBaseHeight, 
       navigate, location,
-      openModal, setOpenModal
+      openModal, setOpenModal,
+      modalSrc, setModalSrc,
+      modalCrYear, setModalCrYear
     }}>
 
-    
     <Magazine>
       <Routes>
         <Route path='/' element={

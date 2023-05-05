@@ -10,13 +10,12 @@ export const ImageWrapper = styled.div`
 `
 
 export const ImageItem = styled.img`
-    // display: inline-block;
     width: ${props => props.w || '35vw'};
     height: auto;
     transition-duration: 1.4s;
     transition-timing-function: easy-in;
     cursor: pointer;
-    // position: relative;
+    margin-top: ${props => props.mt || 0};
     &:hover {
         width: ${props => props.hw || '37vw'};
         margin-left: ${props => props.ml || 0};

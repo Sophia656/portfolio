@@ -1,8 +1,16 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
+import { PagesContext } from '../../context/context';
 import Copyright from '../copyright/Copyright';
-import { ImageDescription, ImageItem, ImageWrapper, ImgLoader, ImgLoaderWrapper } from './styled';
+import { ImageDescription, ImageItem, ImageWrapper, ImgLoaderWrapper } from './styled';
 
-const MyImage = ({link, desc, date, w, hw, ml, cr_year, cr_mt}) => {
+const MyImage = ({link, desc, date, w, hw, ml, cr_year, cr_mt, mt}) => {
+    const { setOpenModal, setModalSrc, setModalCrYear } = useContext(PagesContext)
+
+    const handleClickOpen = (src) => {
+        setModalCrYear(cr_year)
+        setModalSrc(src)
+        setOpenModal(true)
+    }
     const [showCr, setShowCr] = useState(false)
     const [showDescription, setShowDescription] = useState(false)
     const onHandleRightClick = (e) => {
@@ -31,10 +39,13 @@ const MyImage = ({link, desc, date, w, hw, ml, cr_year, cr_mt}) => {
              {/* принимает mt + year */}
             {showCr && <Copyright mt={cr_mt} year={cr_year}  />}
             <ImageItem
-            ref={ref} onLoad={onLoad}
+            ref={ref} 
+            onClick={() => handleClickOpen(ref)}
+            onLoad={onLoad}
             onContextMenu={onHandleRightClick} 
             onMouseEnter={() => setShowDescription(true)}
             onMouseLeave={() => setShowDescription(false)}
+            mt={mt}
             w={w}
             hw={hw}
             ml={showDescription && {ml}}

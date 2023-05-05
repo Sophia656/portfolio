@@ -111,3 +111,29 @@ export const ContentItem = styled(Link)`
     `}
 `
 ---------------------------------------------
+
+
+
+    // const handleScroll = () => {
+    //     const scrollPosition = myref.current.getBoundingClientRect().y; // => scroll position
+    //     console.log(scrollPosition);
+    // };
+    // useEffect(() => {
+    //     handleScroll();
+    //     window.addEventListener("scroll", handleScroll);
+    //     return () => {
+    //         window.removeEventListener("scroll", handleScroll);
+    //     };
+    // }, [window.scrollY]);
+    // setInterval(() => {
+    //     console.log('int', handleScroll())
+    // }, 5000);
+
+    // useEffect(() => {
+    //     if (openModal) {
+    //         console.log('open', window.getBoundingClientRect().y)
+    //     } else {
+    //         console.log('close', myref.current.getBoundingClientRect().y)
+    //     }
+    // }, [openModal])
+    // const executeScroll = () => myRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' })

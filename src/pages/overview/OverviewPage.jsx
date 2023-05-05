@@ -1,26 +1,17 @@
-import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect } from 'react';
+import { useState } from 'react';
+import { useRef } from 'react';
 import { PagesContext } from '../../components/context/context';
 import Modal from '../../components/modal/Modal';
 import MyImage from '../../components/UI/image/MyImage';
 import { ImageLineWrapper, PhotosLine, Title, Wrapper } from './styled';
 
 const OverviewPage = () => {
-    const { openModal, setOpenModal } = useContext(PagesContext);
-
-    const handleClickOpen = () => {
-        setOpenModal(!openModal)
-        console.log('op', openModal)
-    }
-
-    const handleClickClose = () => {
-        setOpenModal(!openModal)
-        console.log('cl', openModal)
-    }
-
-    // console.log(openModal)
+    const { openModal } = useContext(PagesContext)
+    
     return (
         <Wrapper>
-            {openModal && <Modal click={() => handleClickClose()} />}
+            {openModal && <Modal />}
             <Title>OVERVIEW</Title>
             <PhotosLine>
                 <ImageLineWrapper mt='5vh'>
@@ -31,7 +22,6 @@ const OverviewPage = () => {
                     ml=''
                     cr_year='2023'
                     cr_mt='15vh'
-                    onClick={() => handleClickOpen()}
                     />
                     <MyImage
                     link={require('../../images/web/overview/2.jpg')}
@@ -50,6 +40,7 @@ const OverviewPage = () => {
                     cr_mt='15vh'
                     />
                 </ImageLineWrapper>
+                {/* <button onClick={handlescr}>kjdbfjlkb</button> */}
                 <ImageLineWrapper>
                     <MyImage
                     link={require('../../images/web/overview/34.jpg')}
@@ -78,15 +69,15 @@ const OverviewPage = () => {
                 </ImageLineWrapper>
                 <ImageLineWrapper>
                     <MyImage
-                    link={require('../../images/web/overview/38.jpg')}
+                    link={require('../../images/web/overview/65.jpg')}
                     w='25vw'
                     hw='30vw'
                     ml=''
-                    cr_year='2021'
+                    cr_year='2023'
                     cr_mt='15vh'
                     />
                     <MyImage
-                    link={require('../../images/web/overview/51.jpg')}
+                    link={require('../../images/web/overview/6.jpg')}
                     w='20vw'
                     hw='40vw'
                     ml=''
@@ -94,11 +85,11 @@ const OverviewPage = () => {
                     cr_mt='15vh'
                     />
                     <MyImage
-                    link={require('../../images/web/overview/41.jpg')}
+                    link={require('../../images/web/overview/66.jpg')}
                     w='25vw'
                     hw='30vw'
                     ml=''
-                    cr_year='2021'
+                    cr_year='2023'
                     cr_mt='15vh'
                     />
                 </ImageLineWrapper>
@@ -125,6 +116,32 @@ const OverviewPage = () => {
                     hw='35vw'
                     ml=''
                     cr_year='2022'
+                    cr_mt='15vh'
+                    />
+                </ImageLineWrapper>
+                <ImageLineWrapper>
+                    <MyImage
+                    link={require('../../images/web/overview/38.jpg')}
+                    w='25vw'
+                    hw='30vw'
+                    ml=''
+                    cr_year='2021'
+                    cr_mt='15vh'
+                    />
+                    <MyImage
+                    link={require('../../images/web/overview/51.jpg')}
+                    w='20vw'
+                    hw='40vw'
+                    ml=''
+                    cr_year='2022'
+                    cr_mt='15vh'
+                    />
+                    <MyImage
+                    link={require('../../images/web/overview/41.jpg')}
+                    w='25vw'
+                    hw='30vw'
+                    ml=''
+                    cr_year='2021'
                     cr_mt='15vh'
                     />
                 </ImageLineWrapper>

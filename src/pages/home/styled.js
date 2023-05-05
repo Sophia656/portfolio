@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import image from '../../images/web/two_reclining.jpg';
+import image from '../../images/web/two_reclining2.jpg';
 
 export const Wrapper = styled.div`
     width: 100vw;

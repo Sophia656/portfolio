@@ -1,4 +1,4 @@
-import React, { cloneElement, useContext, useEffect } from 'react';
+import React, { cloneElement, useCallback, useContext, useEffect } from 'react';
 import { useState } from 'react';
 import { PagesContext } from '../context/context';
 import Button from '../UI/button/Button';
@@ -8,7 +8,7 @@ import { paths } from '../../route';
 import { useRef } from 'react';
 
 const Magazine = ({children}) => {
-    const { navigate } = useContext(PagesContext);
+    const { navigate, openModal, setOpenModal } = useContext(PagesContext);
     const disabledPageWidth = '0vw';
     const showPageWidth = '100vw'
     const [pages, setPages] = useState([])
@@ -32,7 +32,7 @@ const Magazine = ({children}) => {
                         show: key === 0 ? true : false,
                     },
                     style: {
-                        height: '400vh',
+                        height: '500vh',
                     },
                 })
             }
@@ -43,7 +43,7 @@ const Magazine = ({children}) => {
                         show: key === 0 ? true : false,
                     },
                     style: {
-                        height: '600vh',
+                        height: '800vh',
                     },
                 })
             }
@@ -214,6 +214,7 @@ const Magazine = ({children}) => {
     }, [currentPage])
 
     const handleClick = () => {
+        setOpenModal(false)
         ref.current?.scrollIntoView(0, {behavior: 'smooth'});
     }
 
@@ -230,17 +231,18 @@ const Magazine = ({children}) => {
         //   setToTheBottom(true)
         // }
         if (e.keyCode === 37) {
-          handleLeft()
-        }
-        else if (e.keyCode === 39) {
-          handleRight()
+            handleLeft()
+            handleClick()
+        } else if (e.keyCode === 39) {
+            handleRight()
+            handleClick()
         }
     }
 
     return (
         <Wrapper h={pages.map(p => { // и тут
             if (p.props.helpers.show === true) {
-                return p.props.style.height
+                return openModal ? '100vh' : p.props.style.height
             }
         })}>
             {showBurger && <Burger currentPage={currentPage} setCurrentPage={setCurrentPage} />}
@@ -251,6 +253,7 @@ const Magazine = ({children}) => {
                     key={page.props.helpers.id} 
                     w={page.props.helpers.show === true ? showPageWidth : disabledPageWidth}
                     h={page.props.style.height}
+                    mh={openModal}
                     back={page.props.helpers.show === false && '#cabdb023'}
                     >
                         {page}
