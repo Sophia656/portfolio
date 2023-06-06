@@ -14,7 +14,7 @@ const FacesPage = () => {
             <PhotosLine>
                     <ImageLineWrapper>
                         <MyImage
-                        link={require('../../images/web/personal/1.jpg')}
+                        link={require('../../images/web/personal/13.jpg')}
                         w='25vw'
                         hw='30vw'
                         ml='3vw'
@@ -27,6 +27,24 @@ const FacesPage = () => {
                         hw='30vw'
                         ml='-3vw'
                         cr_year='2021'
+                        cr_mt='10vh'
+                        />
+                    </ImageLineWrapper>
+                    <ImageLineWrapper>
+                        <MyImage
+                        link={require('../../images/web/personal/1.jpg')}
+                        w='25vw'
+                        hw='30vw'
+                        ml='-3vw'
+                        cr_year='2022'
+                        cr_mt='10vh'
+                        />
+                        <MyImage
+                        link={require('../../images/web/personal/7.jpg')}
+                        w='42vw'
+                        hw='54vw'
+                        ml='3vw'
+                        cr_year='2022'
                         cr_mt='10vh'
                         />
                     </ImageLineWrapper>
@@ -48,32 +66,7 @@ const FacesPage = () => {
                         cr_mt='10vh'
                         />
                     </ImageLineWrapper>
-                    <ImageLineWrapper>
-                    <MyImage
-                        link={require('../../images/web/personal/10.jpg')}
-                        w='25vw'
-                        hw='30vw'
-                        ml='-3vw'
-                        cr_year='2022'
-                        cr_mt='10vh'
-                        />
-                        <MyImage
-                        link={require('../../images/web/personal/7.jpg')}
-                        w='42vw'
-                        hw='54vw'
-                        ml='3vw'
-                        cr_year='2022'
-                        cr_mt='10vh'
-                        />
-                        {/* <MyImage
-                        link={require('../../images/web/personal/10.jpg')}
-                        w='25vw'
-                        hw='30vw'
-                        ml='-3vw'
-                        cr_year='2022'
-                        cr_mt='10vh'
-                        /> */}
-                    </ImageLineWrapper>
+                    
                 </PhotosLine>
         </Wrapper>
     );

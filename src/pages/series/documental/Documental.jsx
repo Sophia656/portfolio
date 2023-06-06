@@ -36,6 +36,28 @@ const Documental = () => {
                     </ImageLineWrapper>
                     <ImageLineWrapper>
                         <MyImage
+                        link={require('../../../images/web/documental/59.jpg')}
+                        desc='from the Ballet class series'
+                        date="December, '21"
+                        w='35vw'
+                        hw='48vw'
+                        ml='3vw'
+                        cr_year='2021'
+                        cr_mt='10vh'
+                        />
+                        <MyImage
+                        link={require('../../../images/web/documental/60.jpg')}
+                        desc='from the Ballet class series'
+                        date="December, '21"
+                        w='42vw'
+                        hw='54vw'
+                        ml='-3vw'
+                        cr_year='2021'
+                        cr_mt='10vh'
+                        />
+                    </ImageLineWrapper>
+                    {/* <ImageLineWrapper>
+                        <MyImage
                         link={require('../../../images/web/documental/15.jpg')}
                         desc='from the Ballet class series'
                         date="December, '21"
@@ -55,7 +77,7 @@ const Documental = () => {
                         cr_year='2021'
                         cr_mt='10vh'
                         />
-                    </ImageLineWrapper>
+                    </ImageLineWrapper> */}
                     <ImageLineWrapper>
                         <MyImage
                         link={require('../../../images/web/documental/31.jpg')}

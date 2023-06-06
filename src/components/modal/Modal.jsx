@@ -9,10 +9,10 @@ const Modal = () => {
     const handleClickClose = () => {
         setOpenModal(false)
     }
-
+// close gallery popup
     return (
-        <Wrapper open={openModal} onClick={() => handleClickClose()}>
-            <ClosingCrossWrap><ClosingCross>-</ClosingCross></ClosingCrossWrap>
+        <Wrapper open={openModal}>
+            <ClosingCrossWrap  onClick={() => handleClickClose()}/>
             
             <MyImage
             cr_year={modalCrYear}
