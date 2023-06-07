@@ -102,6 +102,28 @@ const HasardPagee = () => {
                     </ImageLineWrapper>
                     <ImageLineWrapper>
                         <MyImage
+                        link={require('../../../images/web/hasard/9.jpg')}
+                        desc='Untitled'
+                        date="August, '22"
+                        w='25vw'
+                        hw='30vw'
+                        ml='-3vw'
+                        cr_year='2022'
+                        cr_mt='10vh'
+                        />
+                        <MyImage
+                        link={require('../../../images/web/hasard/22.jpg')}
+                        desc='"Sleeping nude from the back"'
+                        date="July, '21"
+                        w='42vw'
+                        hw='54vw'
+                        ml='3vw'
+                        cr_year='2021'
+                        cr_mt='10vh'
+                        />
+                    </ImageLineWrapper>
+                    <ImageLineWrapper>
+                        {/* <MyImage
                         link={require('../../../images/web/hasard/17.jpg')}
                         desc='Untitled'
                         date="December, '22"
@@ -109,6 +131,16 @@ const HasardPagee = () => {
                         hw='54vw'
                         ml='3vw'
                         cr_year='2022'
+                        cr_mt='10vh'
+                        /> */}
+                        <MyImage
+                        link={require('../../../images/web/hasard/27.jpg')}
+                        desc='"Flexible and steadfast"'
+                        date="July, '21"
+                        w='25vw'
+                        hw='30vw'
+                        ml='-3vw'
+                        cr_year='2021'
                         cr_mt='10vh'
                         />
                         <MyImage
@@ -144,7 +176,7 @@ const HasardPagee = () => {
                         cr_mt='10vh'
                         />
                     </ImageLineWrapper>
-                    <ImageLineWrapper>
+                    {/* <ImageLineWrapper>
                         <MyImage
                         link={require('../../../images/web/hasard/9.jpg')}
                         desc='Untitled'
@@ -165,7 +197,7 @@ const HasardPagee = () => {
                         cr_year='2021'
                         cr_mt='10vh'
                         />
-                    </ImageLineWrapper>
+                    </ImageLineWrapper> */}
                     <ImageLineWrapper>
                         <MyImage
                         link={require('../../../images/web/hasard/1.jpg')}

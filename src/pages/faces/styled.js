@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: ${props => props.mt || '0'}
+    margin-top: ${props => props.mt || '0'};
 `
 
 export const Title = styled.h1`

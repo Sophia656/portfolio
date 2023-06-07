@@ -21,7 +21,7 @@ const Contacts = () => {
                 {showCr && <Copyright />}
                 <Avatar onContextMenu={onHandleRightClick} src={avatar} alt="" />
                 <Description>
-                    I am commited to a humanistic understanding of life that is centered on the essence of the human being. Where from and content are inextricably linked and the human body is a perfection of his inner world. In other words, the shot captured in an instant is the quintessence of the conscious and the unconscious.
+                    I am committed to a humanistic understanding of life that is centered on the essence of the human being. Where from and content are inextricably linked and the human body is a perfection of his inner world. In other words, the shot captured in an instant is the quintessence of the conscious and the unconscious.
                 </Description>
             </DescWrap>
             <Footer />
