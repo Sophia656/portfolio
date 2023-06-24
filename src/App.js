@@ -20,20 +20,22 @@ function App() {
   const [openModal, setOpenModal] = useState(false)
   const [modalSrc, setModalSrc] = useState('')
   const [modalCrYear, setModalCrYear] = useState('')
-  const [scrollTop, setScrollTop] = useState(0);
+  // const [scrollTop, setScrollTop] = useState(0);
+  const [testAgeModal, setTestAgeModal] = useState(true)
+  const [rus, setRus] = useState(false)
 
-  useEffect(() => {
-    console.log(scrollTop)
-    const handleScroll = (event) => {
-      setScrollTop(window.scrollY);
-    };
+  // useEffect(() => {
+  //   console.log(scrollTop)
+  //   const handleScroll = (event) => {
+  //     setScrollTop(window.scrollY);
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrollTop]);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [scrollTop]);
 
   return (
     <PagesContext.Provider value={{
@@ -42,7 +44,9 @@ function App() {
       navigate, location,
       openModal, setOpenModal,
       modalSrc, setModalSrc,
-      modalCrYear, setModalCrYear
+      modalCrYear, setModalCrYear,
+      testAgeModal, setTestAgeModal,
+      rus, setRus
     }}>
 
     <Magazine>

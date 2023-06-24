@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
     height: 100vh;
     // max-height: 100vh;
     background: #c3c3c1;
-    // color: #cabdb0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -18,7 +17,7 @@ export const Wrapper = styled.div`
 export const DescWrap = styled.div`
     width: 60vw;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     position: relative;
 `
@@ -27,28 +26,44 @@ export const Avatar = styled.img`
     width: 22vw;
 `
 
-// export const Copyright = styled.div`
-//     position: absolute;
-//     bottom: 0;
-//     left: 0;
-//     font-size: 11px;
-//     margin-bottom: 1vh;
-//     margin-left: 8.5vw;
-//     line-height: 10px;
-//     padding: 8px 8px;
-//     border-radius: 4px;
-//     box-shadow: 0 0 5px #222;
-//     background: #cabdb0a9;
-//     color: black;
-// `
 export const Description = styled.div`
-    // display: flex;
-    // justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 30vw;
-    font-family: 'PT Mono', monospace;
-    // height: 25vh;
     color: black;
-    font-weight: 200;
-    font-size: 0.9rem;
-    // font-family: 'Red Hat Mono', monospace;
+`
+export const DescTitle = styled.div`
+    font-size: 2.7rem;
+    margin-top: 10vh;
+    ${props => props.rus && `
+        font-size: 2.6rem;
+        font-family: 'Roboto Flex', sans-serif;
+    `}
+`
+
+export const DescContent = styled.div`
+    color: black;
+    margin-top: 5vh;
+    width: 30vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    ${props => props.rus && `
+        // font-size: 2.6rem;
+        font-family: 'Roboto Flex', sans-serif;
+    `}
+`
+
+export const DescLinkWrap = styled.p`
+    color: black;
+`
+
+export const DescLink = styled.a`
+    color: black;
+    border-bottom: none;
+    text-decoration: none;
+    cursor: pointer;
 `

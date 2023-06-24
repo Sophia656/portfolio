@@ -11,7 +11,25 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     margin-top: ${props => props.mt || '0'}
+`
+
+export const Description = styled.div`
+    position: absolute;
+    color: #cabdb0;
+    top: 0;
+    margin-top: 30vh;
+    font-size: 2rem;
+    width: 60vw;
+    height: 40vh;
+    line-height: 6vh;
+    text-align: justify;
+    ${props => props.rus && `
+        font-family: 'Roboto Flex', sans-serif;
+        word-spacing: 1px;
+        text-transform: uppercase;
+    `}
 `
 
 export const Title = styled.h1`
@@ -19,6 +37,10 @@ export const Title = styled.h1`
     position: absolute;
     top: 0;
     margin-top: 10vh;
+    ${props => props.rus && `
+        font-size: 3.2rem;
+        font-family: 'Roboto Flex', sans-serif;
+    `}
 `
 
 export const PhotosLine = styled.div`
@@ -31,7 +53,7 @@ export const PhotosLine = styled.div`
     justify-content: space-evenly;
     position: absolute;
     top: 0;
-    margin-top: 14vh;
+    margin-top: 94vh;
 `
 
 export const ImageLineWrapper = styled.div`

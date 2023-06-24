@@ -6,9 +6,10 @@ import { Page, Wrapper } from './styled';
 import Burger from '../burger/Burger';
 import { paths } from '../../route';
 import { useRef } from 'react';
+import LangBtn from '../UI/language-btn/LangBtn';
 
 const Magazine = ({children}) => {
-    const { navigate, openModal, setOpenModal } = useContext(PagesContext);
+    const { navigate, openModal, setOpenModal, testAgeModal, setTestAgeModal } = useContext(PagesContext);
     const disabledPageWidth = '0vw';
     const showPageWidth = '100vw'
     const [pages, setPages] = useState([])
@@ -245,8 +246,9 @@ const Magazine = ({children}) => {
                 return openModal ? '100vh' : p.props.style.height
             }
         })}>
-            {showBurger && <Burger currentPage={currentPage} setCurrentPage={setCurrentPage} />}
-            {currentPage !== 0 && <Button rotate='-90deg' l='0' handleClick={() => {handleLeft(); handleClick()}}/>}
+            <LangBtn />
+            {(showBurger && testAgeModal === false) && <Burger currentPage={currentPage} setCurrentPage={setCurrentPage} />}
+            {(currentPage !== 0 && testAgeModal === false) && <Button rotate='-90deg' l='0' handleClick={() => {handleLeft(); handleClick()}}/>}
                 {pages.map(page =>
                     <Page 
                     ref={ref}
@@ -259,7 +261,7 @@ const Magazine = ({children}) => {
                         {page}
                     </Page>
                 )}
-            {currentPage !== 5 && <Button currentPage={currentPage} rotate='90deg' r='0' handleClick={() => {handleRight(); handleClick()}}/>}
+            {(currentPage !== 5 && testAgeModal === false) && <Button currentPage={currentPage} rotate='90deg' r='0' handleClick={() => {handleRight(); handleClick()}}/>}
         </Wrapper>
     );
 };

@@ -1,11 +1,14 @@
 import React from 'react';
-import { Avatar, Description, DescWrap, Wrapper } from './styled';
+import { Avatar, DescContent, DescLink, DescLinkWrap, Description, DescTitle, DescWrap, Wrapper } from './styled';
 import avatar from '../../images/web/000.jpg';
 import Footer from '../../components/footer/Footer';
 import { useState } from 'react';
 import Copyright from '../../components/UI/copyright/Copyright';
+import { useContext } from 'react';
+import { PagesContext } from '../../components/context/context';
 
 const Contacts = () => {
+    const {rus} = useContext(PagesContext)
     const [showCr, setShowCr] = useState(false)
     const onHandleRightClick = (event) => {
         event.preventDefault()
@@ -21,7 +24,22 @@ const Contacts = () => {
                 {showCr && <Copyright />}
                 <Avatar onContextMenu={onHandleRightClick} src={avatar} alt="" />
                 <Description>
-                    I am committed to a humanistic understanding of life that is centered on the essence of the human being. Where from and content are inextricably linked and the human body is a perfection of his inner world. In other words, the shot captured in an instant is the quintessence of the conscious and the unconscious.
+                    <DescTitle rus={rus}>{rus ? 'КОНТАКТЫ' : 'CONTACTS'}</DescTitle>
+                    <DescContent rus={rus}>
+                        <p>{rus
+                        ?
+                        'По всем вопросам и заказам съемок:'
+                        :
+                        'For all the inquiries and booking please contact:'
+                        }</p>
+                        <DescLinkWrap>
+                            <DescLink href="mailto:antropovasophia@gmail.com">antropovasophia@gmail.com</DescLink>
+                        </DescLinkWrap>
+                        <p>{rus ? 'или' : 'or'}</p>
+                        <DescLinkWrap>
+                            <DescLink href="https://t.me/sophia_antropova">telegram: @antropovasophia</DescLink>
+                        </DescLinkWrap>
+                    </DescContent>
                 </Description>
             </DescWrap>
             <Footer />
