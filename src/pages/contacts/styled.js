@@ -2,11 +2,8 @@ import styled from 'styled-components';
 
 
 export const Wrapper = styled.div`
-    // z-index: 100;
     width: 100vw;
-    // overflow-y: hidden;
     height: 100vh;
-    // max-height: 100vh;
     background: #c3c3c1;
     display: flex;
     align-items: center;
@@ -52,7 +49,6 @@ export const DescContent = styled.div`
     align-items: center;
     justify-content: space-evenly;
     ${props => props.rus && `
-        // font-size: 2.6rem;
         font-family: 'Roboto Flex', sans-serif;
     `}
 `

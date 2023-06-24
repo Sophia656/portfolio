@@ -1,18 +1,14 @@
-import React, { useCallback, useContext, useEffect } from 'react';
-import { useState } from 'react';
-import { useRef } from 'react';
+import React, { useContext } from 'react';
 import { PagesContext } from '../../components/context/context';
-import Modal from '../../components/modal/Modal';
 import MyImage from '../../components/UI/image/MyImage';
 import { ImageLineWrapper, PhotosLine, Title, Wrapper } from './styled';
 
 const OverviewPage = () => {
-    const { openModal } = useContext(PagesContext)
+    const { rus } = useContext(PagesContext)
     
     return (
         <Wrapper>
-            {openModal && <Modal />}
-            <Title>OVERVIEW</Title>
+            <Title rus={rus}>{rus ? 'ОБЩИЙ ОБЗОР' : 'OVERVIEW'}</Title>
             <PhotosLine>
                 <ImageLineWrapper mt='5vh'>
                     <MyImage
@@ -40,7 +36,6 @@ const OverviewPage = () => {
                     cr_mt='15vh'
                     />
                 </ImageLineWrapper>
-                {/* <button onClick={handlescr}>kjdbfjlkb</button> */}
                 <ImageLineWrapper>
                     <MyImage
                     link={require('../../images/web/overview/34.jpg')}

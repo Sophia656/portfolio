@@ -9,7 +9,7 @@ import { useRef } from 'react';
 import LangBtn from '../UI/language-btn/LangBtn';
 
 const Magazine = ({children}) => {
-    const { navigate, openModal, setOpenModal, testAgeModal, setTestAgeModal } = useContext(PagesContext);
+    const { navigate, testAgeModal } = useContext(PagesContext);
     const disabledPageWidth = '0vw';
     const showPageWidth = '100vw'
     const [pages, setPages] = useState([])
@@ -215,7 +215,6 @@ const Magazine = ({children}) => {
     }, [currentPage])
 
     const handleClick = () => {
-        setOpenModal(false)
         ref.current?.scrollIntoView(0, {behavior: 'smooth'});
     }
 
@@ -243,7 +242,7 @@ const Magazine = ({children}) => {
     return (
         <Wrapper h={pages.map(p => { // и тут
             if (p.props.helpers.show === true) {
-                return openModal ? '100vh' : p.props.style.height
+                return p.props.style.height
             }
         })}>
             <LangBtn />
@@ -255,7 +254,6 @@ const Magazine = ({children}) => {
                     key={page.props.helpers.id} 
                     w={page.props.helpers.show === true ? showPageWidth : disabledPageWidth}
                     h={page.props.style.height}
-                    mh={openModal}
                     back={page.props.helpers.show === false && '#cabdb023'}
                     >
                         {page}

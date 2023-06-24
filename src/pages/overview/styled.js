@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     overflow: hidden;
-    // background: white;
-    // background: #c3c3c1;
     width: 100vw;
     height: inherit;
     display: flex;
@@ -21,6 +19,10 @@ export const Title = styled.h1`
     position: absolute;
     top: 0;
     margin-top: 10vh;
+    ${props => props.rus && `
+        font-size: 3.2rem;
+        font-family: 'Roboto Flex', sans-serif;
+    `}
 `
 
 export const PhotosLine = styled.div`
@@ -44,4 +46,7 @@ export const ImageLineWrapper = styled.div`
     align-items: center;
     justify-content: space-evenly;
     margin-top: ${props => props.mt || 0};
+    ${props => props.openModal && `
+        height: 100vh;
+    `}
 `

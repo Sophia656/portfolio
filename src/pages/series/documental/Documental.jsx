@@ -1,16 +1,14 @@
 import React, { useContext } from 'react';
 import { PagesContext } from '../../../components/context/context';
-import Modal from '../../../components/modal/Modal';
 import MyImage from '../../../components/UI/image/MyImage';
 import { ImageLineWrapper, PhotosLine, Title, Wrapper } from './styled';
 
 const Documental = () => {
-    const { openModal } = useContext(PagesContext)
+    const { rus } = useContext(PagesContext)
 
     return (
         <Wrapper>
-            {openModal && <Modal />}
-                <Title>DOCUMENTARY PHOTOGRAPHY</Title>
+                <Title rus={rus}>{rus ? 'ДОКУМЕНТАЛЬНАЯ ФОТОГРАФИЯ' : 'DOCUMENTARY PHOTOGRAPHY'}</Title>
                 <PhotosLine>
                     <ImageLineWrapper>
                         <MyImage

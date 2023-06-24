@@ -1,25 +1,17 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { PagesContext } from '../../components/context/context';
 import Title from '../../components/title/Title';
-import { AgeModal, AgeModalWrapper, DescTitle, ModalBtn, ModalBtnsWrap, ModalDesc, Wrapper } from './styled';
+import { AgeModal, AgeModalWrapper, DescTitle, ModalBtn, ModalDesc, Wrapper } from './styled';
 
 const HomePage = () => {
     const {testAgeModal, setTestAgeModal, rus} = useContext(PagesContext)
     const [showCursor, setShowCursor] = useState(false)
-    // const [testAgeModal, setTestAgeModal] = useState(true)
 
     const startSettimeout = () => {
         setTimeout(() => {
             setShowCursor(true)
         }, 7000);
     }
-
-    // useEffect(() => {
-
-    //     setTimeout(() => {
-    //         setShowCursor(true)
-    //     }, 7000);
-    // }, [])
 
     return (
         <>

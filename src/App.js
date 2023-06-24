@@ -1,8 +1,8 @@
-import Carousel from "./components/carousel/Carousel";
 import {Route, Routes, useLocation, useNavigate} from 'react-router-dom';
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { PagesContext } from "./components/context/context";
 import Magazine from "./components/magazine/Magazine";
+import Loader from "./components/UI/loader/Loader";
 
 const OverviewPage = React.lazy(() => import('./pages/overview/OverviewPage'));
 const Contacts = React.lazy(() => import('./pages/contacts/Contacts'));
@@ -17,33 +17,15 @@ function App() {
   const navigate = useNavigate()
   const location = useLocation()
   const [baseHeight, setBaseHeight] = useState('fit-content')
-  const [openModal, setOpenModal] = useState(false)
-  const [modalSrc, setModalSrc] = useState('')
   const [modalCrYear, setModalCrYear] = useState('')
-  // const [scrollTop, setScrollTop] = useState(0);
   const [testAgeModal, setTestAgeModal] = useState(true)
   const [rus, setRus] = useState(false)
-
-  // useEffect(() => {
-  //   console.log(scrollTop)
-  //   const handleScroll = (event) => {
-  //     setScrollTop(window.scrollY);
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, [scrollTop]);
 
   return (
     <PagesContext.Provider value={{
       height, setHeight, 
       baseHeight, setBaseHeight, 
       navigate, location,
-      openModal, setOpenModal,
-      modalSrc, setModalSrc,
       modalCrYear, setModalCrYear,
       testAgeModal, setTestAgeModal,
       rus, setRus
@@ -52,7 +34,7 @@ function App() {
     <Magazine>
       <Routes>
         <Route path='/' element={
-          <React.Suspense fallback={<div style={{color: 'green'}}>loading</div>}>
+          <React.Suspense fallback={<Loader />}>
               <HomePage />
           </React.Suspense>
         }/>

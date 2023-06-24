@@ -63,8 +63,6 @@ export const BurgerMenu = styled.div`
     top: 0;
     left: 0;
     margin-top: 75vh;
-    // display: flex;
-    // flex-direction: column;
     justify-content: stretch;
     height: 15vh;
     background: black;
@@ -88,28 +86,30 @@ export const BurgerItem = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    // border: solid grey;
-    // border-top-style: none;
-    // border-bottom-style: none;
 `
 
 export const BurgerItemTitle = styled(Link)`
     padding: 0.4vw 0.9vh;
     text-decoration: none;
-    color: black;
-
-    background: #cabdb0a9;
+    color: ${props => props.col || '#cabdb0'};
+    width: 15vw;
+    height: 8vh;
+    backdrop-filter: blur(15px);
     cursor: pointer;
     font-weight: bold;
-    font-size: 1.5rem;
-    transition-duration: 0.8s;
-    transition-timing-function: easy-in-out;
-
-    // padding: 6px 6px;
+    font-size: 1.4rem;
     border-radius: 4px;
-    box-shadow: 0 0 5px #cabdb0a9;
-    // background: #cabdb0a9;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5vh;
     &:hover {
-        font-size: 1.8rem;
+        border: ${props => props.border || '1px solid #cabdb0'};
     }
+    ${props => props.rus && `
+        font-weight: 800;
+        font-size: 1.3rem;
+        font-family: 'Roboto Flex', sans-serif;
+    `}
 `

@@ -7,11 +7,14 @@ import hasard from '../../images/web/hasard_page2.jpg';
 import personal from '../../images/web/personal_page2.jpg';
 import overview from '../../images/web/overview_page4.jpg';
 import { useEffect } from 'react';
+import { useContext } from 'react';
+import { PagesContext } from '../context/context';
 
 const Burger = ({currentPage, setCurrentPage}) => {
     const [active, setActive] = useState(false)
     const [showSeries, setShowSeries] = useState(false)
     const [changeDots, setChangeDots] = useState(false)
+    const { rus } = useContext(PagesContext)
 
     useEffect(() => {
         if (currentPage === 5) {
@@ -34,8 +37,9 @@ const Burger = ({currentPage, setCurrentPage}) => {
                 onMouseEnter={() => {setShowSeries(false)}} 
                 onClick={() => {setCurrentPage(1); setActive(false)}} 
                 to='/overview'
+                rus={rus}
                 >
-                    OVERVIEW
+                    {rus ? 'ОБЩИЙ ОБЗОР' : 'OVERVIEW'}
                 </BurgerItemTitle>
             </BurgerItem>
             <BurgerItem backimg={`url(${hasard})`}>
@@ -44,8 +48,14 @@ const Burger = ({currentPage, setCurrentPage}) => {
                  onMouseEnter={() => setShowSeries(true)} 
                  onClick={() => {setCurrentPage(2); setActive(false)}} 
                  to='/hasardobjective'
+                 rus={rus}
                  >
-                    HASARD OBJECTIF
+                    {rus
+                ?
+                'ОБЪЕКТИВНАЯ РЕАЛЬНОСТЬ'
+                :
+                'HASARD OBJECTIF'
+                }
                  </BurgerItemTitle>
             </BurgerItem>
             <BurgerItem backimg={`url(${doc})`}>
@@ -54,8 +64,9 @@ const Burger = ({currentPage, setCurrentPage}) => {
                  onMouseEnter={() => setShowSeries(true)} 
                  onClick={() => {setCurrentPage(3); setActive(false)}} 
                  to='/documental'
+                 rus={rus}
                  >
-                    DOCUMENTAL
+                    {rus ? 'ДОКУМЕНТАЛЬНАЯ ФОТОГРАФИЯ' : 'DOCUMENTARY PHOTOGRAPHY'}
                  </BurgerItemTitle>
             </BurgerItem>
             <BurgerItem backimg={`url(${personal})`}>
@@ -64,8 +75,9 @@ const Burger = ({currentPage, setCurrentPage}) => {
                  onMouseEnter={() => setShowSeries(true)} 
                  onClick={() => {setCurrentPage(4); setActive(false)}} 
                  to='/personalities'
+                 rus={rus}
                  >
-                    PERSONALITIES
+                    {rus ? 'ПЕРСОНАЛЬНЫЕ РАБОТЫ' : 'PERSONALITIES'}
                  </BurgerItemTitle>
             </BurgerItem>
             <BurgerItem backimg={`url(${contacts})`}>
@@ -74,8 +86,11 @@ const Burger = ({currentPage, setCurrentPage}) => {
                  onMouseEnter={() => setShowSeries(false)} 
                  onClick={() => {setCurrentPage(5); setActive(false)}} 
                  to='/contacts'
+                 rus={rus}
+                 col='black'
+                 border='1px solid black'
                  >
-                    CONTACTS
+                    {rus ? 'КОНТАКТЫ' : 'CONTACTS'}
                 </BurgerItemTitle>
             </BurgerItem>
         </BurgerMenu>

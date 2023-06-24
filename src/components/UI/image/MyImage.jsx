@@ -1,16 +1,9 @@
-import React, { useState, useRef, useEffect, useContext } from 'react';
-import { PagesContext } from '../../context/context';
+import React, { useState, useRef, useEffect } from 'react';
 import Copyright from '../copyright/Copyright';
 import { ImageDescription, ImageItem, ImageWrapper, ImgLoaderWrapper } from './styled';
 
-const MyImage = ({link, desc, date, w, hw, ml, cr_year, cr_mt, mt}) => {
-    const { setOpenModal, setModalSrc, setModalCrYear } = useContext(PagesContext)
+const MyImage = ({link, desc, date, w, hw, ml, cr_year, cr_mt, mt, rus}) => {
 
-    const handleClickOpen = (src) => {
-        setModalCrYear(cr_year)
-        setModalSrc(src)
-        setOpenModal(true)
-    }
     const [showCr, setShowCr] = useState(false)
     const [showDescription, setShowDescription] = useState(false)
     const onHandleRightClick = (e) => {
@@ -39,8 +32,6 @@ const MyImage = ({link, desc, date, w, hw, ml, cr_year, cr_mt, mt}) => {
              {/* принимает mt + year */}
             {showCr && <Copyright mt={cr_mt} year={cr_year}  />}
             <ImageItem
-            ref={ref} 
-            onClick={() => handleClickOpen(ref)}
             onLoad={onLoad}
             onContextMenu={onHandleRightClick} 
             onMouseEnter={() => setShowDescription(true)}
@@ -49,9 +40,11 @@ const MyImage = ({link, desc, date, w, hw, ml, cr_year, cr_mt, mt}) => {
             w={w}
             hw={hw}
             ml={showDescription && {ml}}
-            src={link} alt='#' />
+            src={link} 
+            alt='#' 
+            />
             {!loaded && <ImgLoaderWrapper></ImgLoaderWrapper>}
-            <ImageDescription showdesc={showDescription}>{desc}<br/>{date}</ImageDescription>
+            <ImageDescription rus={rus} showdesc={showDescription}>{desc}<br/>{date}</ImageDescription>
         </ImageWrapper>
     );
 };

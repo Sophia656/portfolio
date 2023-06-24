@@ -46,7 +46,6 @@ export const ModalDesc = styled.div`
     text-align: center;
     margin-top: 0vh;
     ${props => props.rus && `
-        // margin-top: -5vh;
         margin-bottom: 4vh;
         font-family: 'Roboto Flex', sans-serif;
         word-spacing: 1px;
@@ -56,7 +55,6 @@ export const ModalDesc = styled.div`
 `
 
 export const DescTitle = styled.div`
-    // display: inline-block;
     color: #ba3100;
     font-size: 1.5rem;
     margin-bottom: 0vh;

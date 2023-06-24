@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const ImageWrapper = styled.div`
-    // height: 75vh;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -32,6 +31,9 @@ export const ImageDescription = styled.div`
     transition-timing-function: easy-in;
     ${props => props.showdesc&&`
         opacity: 1;
+    `}
+    ${props => props.rus && `
+        font-family: 'Roboto Flex', sans-serif;
     `}
 `
 

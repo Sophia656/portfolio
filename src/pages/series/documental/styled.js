@@ -19,6 +19,10 @@ export const Title = styled.h1`
     position: absolute;
     top: 0;
     margin-top: 10vh;
+    ${props => props.rus && `
+        font-size: 3.2rem;
+        font-family: 'Roboto Flex', sans-serif;
+    `}
 `
 
 export const PhotosLine = styled.div`

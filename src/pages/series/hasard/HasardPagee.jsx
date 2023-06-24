@@ -1,16 +1,14 @@
 import React, { useContext } from 'react';
 import { PagesContext } from '../../../components/context/context';
-import Modal from '../../../components/modal/Modal';
 import MyImage from '../../../components/UI/image/MyImage';
 import { Description, ImageLineWrapper, PhotosLine, Title, Wrapper } from './styled';
 
 const HasardPagee = () => {
-    const { openModal, rus } = useContext(PagesContext)
+    const { rus } = useContext(PagesContext)
 
     
     return (
         <Wrapper>
-            {openModal && <Modal />}
             <Title rus={rus}>
                 {rus
                 ?
@@ -32,13 +30,14 @@ const HasardPagee = () => {
                     <ImageLineWrapper>
                         <MyImage
                         link={require('../../../images/web/hasard/3.jpg')}
-                        desc='"Two reclining girls"'
-                        date="June, '21"
+                        desc={rus ? '"Две лежащие"' : '"Two reclining girls"'}
+                        date={rus ? "Июнь 21-го" : "June, '21"}
                         w='42vw'
                         hw='54vw'
                         ml='3vw'
                         cr_year='2021'
                         cr_mt='10vh'
+                        rus={rus}
                         />
                         <MyImage
                         link={require('../../../images/web/hasard/15.jpg')}
