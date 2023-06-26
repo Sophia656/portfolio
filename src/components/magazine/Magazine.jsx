@@ -44,7 +44,7 @@ const Magazine = ({children}) => {
                         show: key === 0 ? true : false,
                     },
                     style: {
-                        height: '800vh',
+                        height: '1000vh',
                     },
                 })
             }
@@ -66,7 +66,7 @@ const Magazine = ({children}) => {
                         show: key === 0 ? true : false,
                     },
                     style: {
-                        height: '300vh',
+                        height: '800vh',
                     },
                 })
             } else {

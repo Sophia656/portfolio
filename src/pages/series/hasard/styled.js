@@ -33,6 +33,24 @@ export const Description = styled.div`
     `};
 `
 
+export const SubDesc = styled.div`
+    position: absolute;
+    color: ${TEXT_LIGHT};
+    top: 0;
+    margin-top: 90vh;
+    font-size: 1.6rem;
+    width: 60vw;
+    height: 40vh;
+    line-height: 6vh;
+    text-align: justify;
+    text-transform: uppercase;
+    ${props => props.rus && `
+        font-family: ${ROBOTO};
+        word-spacing: 1px;
+        font-weight: 200;
+    `};
+`
+
 export const Title = styled.h1`
     color: ${TEXT_LIGHT};
     position: absolute;
@@ -54,7 +72,7 @@ export const PhotosLine = styled.div`
     justify-content: space-evenly;
     position: absolute;
     top: 0;
-    margin-top: 94vh;
+    margin-top: 194vh;
 `
 
 export const ImageLineWrapper = styled.div`
