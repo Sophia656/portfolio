@@ -29,6 +29,7 @@ export const Description = styled.div`
         font-family: 'Roboto Flex', sans-serif;
         word-spacing: 1px;
         text-transform: uppercase;
+        font-weight: 200;
     `}
 `
 

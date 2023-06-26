@@ -7,6 +7,10 @@ export const Wrapper = styled.div`
     background: #0a0602;
     display: flex;
     justify-content: center;
+    overflow-y: scroll;
+    ${props => props.openImg && `
+        overflow-y: hidden;
+    `}
 `
 
 export const Page = styled.div`

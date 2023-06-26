@@ -1,8 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Copyright from '../copyright/Copyright';
 import { ImageDescription, ImageItem, ImageWrapper, ImgLoaderWrapper } from './styled';
+import { useContext } from 'react';
+import { PagesContext } from '../../context/context';
 
 const MyImage = ({link, desc, date, w, hw, ml, cr_year, cr_mt, mt, rus}) => {
+    const { openCurrentImg, setOpenCurrentImg } = useContext(PagesContext)
+
 
     const [showCr, setShowCr] = useState(false)
     const [showDescription, setShowDescription] = useState(false)
@@ -33,6 +37,7 @@ const MyImage = ({link, desc, date, w, hw, ml, cr_year, cr_mt, mt, rus}) => {
             {showCr && <Copyright mt={cr_mt} year={cr_year}  />}
             <ImageItem
             onLoad={onLoad}
+            onClick={() => setOpenCurrentImg(!openCurrentImg)}
             onContextMenu={onHandleRightClick} 
             onMouseEnter={() => setShowDescription(true)}
             onMouseLeave={() => setShowDescription(false)}
@@ -44,7 +49,7 @@ const MyImage = ({link, desc, date, w, hw, ml, cr_year, cr_mt, mt, rus}) => {
             alt='#' 
             />
             {!loaded && <ImgLoaderWrapper></ImgLoaderWrapper>}
-            <ImageDescription rus={rus} showdesc={showDescription}>{desc}<br/>{date}</ImageDescription>
+            <ImageDescription rus={rus} showdesc={showDescription}>{desc}<br/>{cr_year}</ImageDescription>
         </ImageWrapper>
     );
 };

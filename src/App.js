@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { PagesContext } from "./components/context/context";
 import Magazine from "./components/magazine/Magazine";
 import Loader from "./components/UI/loader/Loader";
+import { useEffect } from 'react';
 
 const OverviewPage = React.lazy(() => import('./pages/overview/OverviewPage'));
 const Contacts = React.lazy(() => import('./pages/contacts/Contacts'));
@@ -20,6 +21,22 @@ function App() {
   const [modalCrYear, setModalCrYear] = useState('')
   const [testAgeModal, setTestAgeModal] = useState(true)
   const [rus, setRus] = useState(false)
+  
+  const [openCurrentImg, setOpenCurrentImg] = useState(false)
+
+  // useEffect(() => {
+  //   document.addEventListener('scroll', scrollHandler)
+  //   return function() {
+  //     document.removeEventListener('scroll', scrollHandler)
+  //   }
+  // }, [])
+
+  // const scrollHandler = (e) => {
+  //   console.log('scroll')
+  // //   console.log('общая высота стр с уч скроолла: ', e.target.documentElement.scrollHeight)
+  // //   console.log('тек полож скролла от верха стр: ', e.target.documentElement.scrollTop)
+  // //   console.log('высота видимой области стр: ', window.innerHeight)
+  // }
 
   return (
     <PagesContext.Provider value={{
@@ -28,7 +45,8 @@ function App() {
       navigate, location,
       modalCrYear, setModalCrYear,
       testAgeModal, setTestAgeModal,
-      rus, setRus
+      rus, setRus,
+      openCurrentImg, setOpenCurrentImg
     }}>
 
     <Magazine>

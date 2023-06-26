@@ -46,7 +46,9 @@ export const ImageLineWrapper = styled.div`
     align-items: center;
     justify-content: space-evenly;
     margin-top: ${props => props.mt || 0};
-    ${props => props.openModal && `
+    ${props => props.openImg && `
         height: 100vh;
+        margin-top: 0;
+        background: white;
     `}
 `

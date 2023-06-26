@@ -33,11 +33,11 @@ const Contacts = () => {
                         'For all the inquiries and booking please contact:'
                         }</p>
                         <DescLinkWrap>
-                            <DescLink href="mailto:antropovasophia@gmail.com">antropovasophia@gmail.com</DescLink>
+                            <DescLink rus={rus} href="mailto:antropovasophia@gmail.com">antropovasophia@gmail.com</DescLink>
                         </DescLinkWrap>
                         <p>{rus ? 'или' : 'or'}</p>
                         <DescLinkWrap>
-                            <DescLink href="https://t.me/sophia_antropova">telegram: @antropovasophia</DescLink>
+                            <DescLink rus={rus} href="https://t.me/sophia_antropova">telegram: @antropovasophia</DescLink>
                         </DescLinkWrap>
                     </DescContent>
                 </Description>

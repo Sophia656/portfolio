@@ -9,7 +9,7 @@ import { useRef } from 'react';
 import LangBtn from '../UI/language-btn/LangBtn';
 
 const Magazine = ({children}) => {
-    const { navigate, testAgeModal } = useContext(PagesContext);
+    const { navigate, testAgeModal, openCurrentImg } = useContext(PagesContext);
     const disabledPageWidth = '0vw';
     const showPageWidth = '100vw'
     const [pages, setPages] = useState([])
@@ -223,13 +223,8 @@ const Magazine = ({children}) => {
     function checkKey(e) {
   
         e = e || window.event;
-    
-        // if (e.keyCode === 38) {
-        //   setToTheTop(true)
-        // }
-        // else if (e.keyCode === 40) {
-        //   setToTheBottom(true)
-        // }
+        if (testAgeModal === false) {
+
         if (e.keyCode === 37) {
             handleLeft()
             handleClick()
@@ -237,10 +232,20 @@ const Magazine = ({children}) => {
             handleRight()
             handleClick()
         }
+        }
+        // if (e.keyCode === 38) {
+        //   setToTheTop(true)
+        // }
+        // else if (e.keyCode === 40) {
+        //   setToTheBottom(true)
+        // }
+
     }
 
+    
+
     return (
-        <Wrapper h={pages.map(p => { // и тут
+        <Wrapper openImg={openCurrentImg} h={pages.map(p => { // и тут
             if (p.props.helpers.show === true) {
                 return p.props.style.height
             }

@@ -50,6 +50,7 @@ export const DescContent = styled.div`
     justify-content: space-evenly;
     ${props => props.rus && `
         font-family: 'Roboto Flex', sans-serif;
+        font-weight: 200;
     `}
 `
 
@@ -62,4 +63,7 @@ export const DescLink = styled.a`
     border-bottom: none;
     text-decoration: none;
     cursor: pointer;
+    ${props => props.rus && `
+        font-family: 'Bai Jamjuree', sans-serif;
+    `}
 `

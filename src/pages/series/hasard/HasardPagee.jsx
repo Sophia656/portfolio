@@ -31,7 +31,7 @@ const HasardPagee = () => {
                         <MyImage
                         link={require('../../../images/web/hasard/3.jpg')}
                         desc={rus ? '"Две лежащие"' : '"Two reclining girls"'}
-                        date={rus ? "Июнь 21-го" : "June, '21"}
+                        // date={rus ? "Июнь 21-го" : "June, '21"}
                         w='42vw'
                         hw='54vw'
                         ml='3vw'
@@ -41,8 +41,8 @@ const HasardPagee = () => {
                         />
                         <MyImage
                         link={require('../../../images/web/hasard/15.jpg')}
-                        desc='"Sufferer and victim"'
-                        date="April, '23"
+                        desc={rus ? '"Страдалец и жертва"' : '"Sufferer and victim"'}
+                        // date="April, '23"
                         w='25vw'
                         hw='30vw'
                         ml='-3vw'
@@ -53,7 +53,7 @@ const HasardPagee = () => {
                     <ImageLineWrapper>
                         <MyImage
                         link={require('../../../images/web/hasard/2.jpg')}
-                        desc='"Twist"'
+                        desc={rus ? '"Твист"' : '"Twist"'}
                         date="July, '21"
                         w='25vw'
                         hw='30vw'
@@ -63,7 +63,7 @@ const HasardPagee = () => {
                         />
                         <MyImage
                         link={require('../../../images/web/hasard/8.jpg')}
-                        desc='"On the hook"'
+                        desc={rus ? '"На крючке"' : '"On the hook"'}
                         date="July, '21"
                         w='25vw'
                         hw='30vw'
@@ -75,7 +75,7 @@ const HasardPagee = () => {
                     <ImageLineWrapper>
                         <MyImage
                         link={require('../../../images/web/hasard/6.jpg')}
-                        desc='Untitled'
+                        desc={rus ? 'Без названия' : 'Untitled'}
                         date="August, '22"
                         w='25vw'
                         hw='30vw'
@@ -85,7 +85,7 @@ const HasardPagee = () => {
                         />
                         <MyImage
                         link={require('../../../images/web/hasard/14.jpg')}
-                        desc='"Sleeping nude from the back"'
+                        desc={rus ? '"Спящая обнаженная со спины"' : '"Sleeping nude from the back"'}
                         date="July, '21"
                         w='42vw'
                         hw='54vw'
@@ -97,7 +97,7 @@ const HasardPagee = () => {
                     <ImageLineWrapper>
                         <MyImage
                         link={require('../../../images/web/hasard/7.jpg')}
-                        desc='"Indifferentism"'
+                        desc={rus ? '"Индифферентизм"' : '"Indifferentism"'}
                         date="June, '21"
                         w='25vw'
                         hw='30vw'
@@ -107,7 +107,7 @@ const HasardPagee = () => {
                         />
                         <MyImage
                         link={require('../../../images/web/hasard/12.jpg')}
-                        desc='"Flexible and steadfast"'
+                        desc={rus ? '"Бессознательное"' : '"The unconscious"'}
                         date="July, '21"
                         w='25vw'
                         hw='30vw'
@@ -119,7 +119,7 @@ const HasardPagee = () => {
                     <ImageLineWrapper>
                         <MyImage
                         link={require('../../../images/web/hasard/9.jpg')}
-                        desc='Untitled'
+                        desc={rus ? '"Женственность"' : '"Femininity"'}
                         date="August, '22"
                         w='25vw'
                         hw='30vw'
@@ -129,7 +129,7 @@ const HasardPagee = () => {
                         />
                         <MyImage
                         link={require('../../../images/web/hasard/22.jpg')}
-                        desc='"Sleeping nude from the back"'
+                        desc={rus ? '"Влюбленная"' : '"Enamored"'}
                         date="July, '21"
                         w='42vw'
                         hw='54vw'
@@ -139,19 +139,9 @@ const HasardPagee = () => {
                         />
                     </ImageLineWrapper>
                     <ImageLineWrapper>
-                        {/* <MyImage
-                        link={require('../../../images/web/hasard/17.jpg')}
-                        desc='Untitled'
-                        date="December, '22"
-                        w='42vw'
-                        hw='54vw'
-                        ml='3vw'
-                        cr_year='2022'
-                        cr_mt='10vh'
-                        /> */}
                         <MyImage
                         link={require('../../../images/web/hasard/30.jpg')}
-                        desc='"Flexible and steadfast"'
+                        desc={rus ? '"Близость"' : '"Proximity"'}
                         date="July, '21"
                         w='25vw'
                         hw='30vw'
@@ -161,7 +151,7 @@ const HasardPagee = () => {
                         />
                         <MyImage
                         link={require('../../../images/web/hasard/23.jpg')}
-                        desc='"In the arms"'
+                        desc={rus ? '"В объятиях"' : '"In the arms"'}
                         date="April, '23"
                         w='25vw'
                         hw='30vw'
@@ -173,7 +163,7 @@ const HasardPagee = () => {
                     <ImageLineWrapper>
                         <MyImage
                         link={require('../../../images/web/hasard/25.jpg')}
-                        desc='"Power"'
+                        desc={rus ? '"Сила страха"' : '"The power of fear"'}
                         date="June, '21"
                         w='25vw'
                         hw='30vw'
@@ -183,7 +173,7 @@ const HasardPagee = () => {
                         />
                         <MyImage
                         link={require('../../../images/web/hasard/18.jpg')}
-                        desc='"Lines and poses"'
+                        desc={rus ? '"Сидящий полуобнаженный"' : '"Sitting half-naked"'}
                         date="June, '21"
                         w='25vw'
                         hw='30vw'
@@ -192,32 +182,10 @@ const HasardPagee = () => {
                         cr_mt='10vh'
                         />
                     </ImageLineWrapper>
-                    {/* <ImageLineWrapper>
-                        <MyImage
-                        link={require('../../../images/web/hasard/9.jpg')}
-                        desc='Untitled'
-                        date="August, '22"
-                        w='25vw'
-                        hw='30vw'
-                        ml='-3vw'
-                        cr_year='2022'
-                        cr_mt='10vh'
-                        />
-                        <MyImage
-                        link={require('../../../images/web/hasard/22.jpg')}
-                        desc='"Sleeping nude from the back"'
-                        date="July, '21"
-                        w='42vw'
-                        hw='54vw'
-                        ml='3vw'
-                        cr_year='2021'
-                        cr_mt='10vh'
-                        />
-                    </ImageLineWrapper> */}
                     <ImageLineWrapper>
                         <MyImage
                         link={require('../../../images/web/hasard/1.jpg')}
-                        desc='"Power"'
+                        desc={rus ? '"Сознательное"' : '"The conscious"'}
                         date="June, '21"
                         w='25vw'
                         hw='30vw'
@@ -227,7 +195,7 @@ const HasardPagee = () => {
                         />
                         <MyImage
                         link={require('../../../images/web/hasard/16.jpg')}
-                        desc='"Lines and poses"'
+                        desc={rus ? '"Линии и позы"' : '"Lines and poses"'}
                         date="June, '21"
                         w='25vw'
                         hw='30vw'
@@ -242,3 +210,5 @@ const HasardPagee = () => {
 };
 
 export default HasardPagee;
+
+// '"Flexible and steadfast"'
