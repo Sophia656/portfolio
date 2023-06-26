@@ -239,7 +239,6 @@ const Magazine = ({children}) => {
         // else if (e.keyCode === 40) {
         //   setToTheBottom(true)
         // }
-
     }
 
     

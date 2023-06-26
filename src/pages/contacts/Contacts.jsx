@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, DescContent, DescLink, DescLinkWrap, Description, DescTitle, DescWrap, Wrapper } from './styled';
+import { Avatar, DescContent, DescLink, Description, DescTitle, DescWrap, Wrapper } from './styled';
 import avatar from '../../images/web/000.jpg';
 import Footer from '../../components/footer/Footer';
 import { useState } from 'react';
@@ -32,13 +32,13 @@ const Contacts = () => {
                         :
                         'For all the inquiries and booking please contact:'
                         }</p>
-                        <DescLinkWrap>
+                        <p>
                             <DescLink rus={rus} href="mailto:antropovasophia@gmail.com">antropovasophia@gmail.com</DescLink>
-                        </DescLinkWrap>
+                        </p>
                         <p>{rus ? 'или' : 'or'}</p>
-                        <DescLinkWrap>
+                        <p>
                             <DescLink rus={rus} href="https://t.me/sophia_antropova">telegram: @antropovasophia</DescLink>
-                        </DescLinkWrap>
+                        </p>
                     </DescContent>
                 </Description>
             </DescWrap>

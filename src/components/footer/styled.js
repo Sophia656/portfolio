@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {RED, TEXT_DARK} from '../../colors/index';
 
 export const Wrapper = styled.footer`
     position: absolute;
@@ -8,7 +9,7 @@ export const Wrapper = styled.footer`
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: black;
+    color: ${TEXT_DARK};
 `
 
 export const SocialIcons = styled.ul`
@@ -39,5 +40,5 @@ export const Copyright = styled.div`
 `
 
 export const DoubleLetter = styled.span`
-    color: #ba3100;
+    color: ${RED};
 `

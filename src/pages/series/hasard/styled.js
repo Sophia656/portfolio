@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import {TEXT_LIGHT, ROBOTO} from '../../../colors/index';
 
 export const Wrapper = styled.div`
     overflow: hidden;
@@ -12,12 +12,12 @@ export const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: ${props => props.mt || '0'}
+    margin-top: ${props => props.mt || '0'};
 `
 
 export const Description = styled.div`
     position: absolute;
-    color: #cabdb0;
+    color: ${TEXT_LIGHT};
     top: 0;
     margin-top: 30vh;
     font-size: 2rem;
@@ -26,22 +26,22 @@ export const Description = styled.div`
     line-height: 6vh;
     text-align: justify;
     ${props => props.rus && `
-        font-family: 'Roboto Flex', sans-serif;
+        font-family: ${ROBOTO};
         word-spacing: 1px;
         text-transform: uppercase;
         font-weight: 200;
-    `}
+    `};
 `
 
 export const Title = styled.h1`
-    color: #cabdb0;
+    color: ${TEXT_LIGHT};
     position: absolute;
     top: 0;
     margin-top: 10vh;
     ${props => props.rus && `
         font-size: 3.2rem;
-        font-family: 'Roboto Flex', sans-serif;
-    `}
+        font-family: ${ROBOTO};
+    `};
 `
 
 export const PhotosLine = styled.div`

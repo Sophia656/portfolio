@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import {TEXT_LIGHT, RED, TEXT_DARK, ROBOTO} from '../../colors/index';
 
 export const Wrapper = styled.div`
     width: 100vw;
@@ -24,7 +25,7 @@ export const BurgerWrapper = styled.div`
 `
 
 export const BurgerItemTop = styled.span`
-    background: ${props => props.dotback || '#cabdb0'};
+    background: ${props => props.dotback || TEXT_LIGHT};
     position: absolute;
     width: 40px;
     height: 8px;
@@ -36,13 +37,13 @@ export const BurgerItemTop = styled.span`
 	text-align: center;
 	font-size: 1.5em;
     ${props => props.active&&`
-        background: #ba3100;
+        background: ${RED};
         transform: rotate(45deg);
         top: 46px;
-    `}
+    `};
 `
 export const BurgerItemBottom = styled.span`
-    background: ${props => props.dotback || '#cabdb0'};
+    background: ${props => props.dotback || TEXT_LIGHT};
     position: absolute;
     width: 40px;
     height: 8px;
@@ -54,8 +55,8 @@ export const BurgerItemBottom = styled.span`
 	text-align: center;
 	font-size: 1.5em;
     ${props => props.active&&`
-        background: #ba3100;
-    `}
+        background: ${RED};
+    `};
 `
 
 export const BurgerMenu = styled.div`
@@ -65,7 +66,7 @@ export const BurgerMenu = styled.div`
     margin-top: 75vh;
     justify-content: stretch;
     height: 15vh;
-    background: black;
+    background: ${TEXT_DARK};
     width: 100vw;
     position: relative;
     opacity: 0;
@@ -75,7 +76,7 @@ export const BurgerMenu = styled.div`
     ${props => props.active&&`
         opacity: 1;
         display: flex;
-    `}
+    `};
 `
 
 export const BurgerItem = styled.div`
@@ -91,7 +92,7 @@ export const BurgerItem = styled.div`
 export const BurgerItemTitle = styled(Link)`
     padding: 0.4vw 0.9vh;
     text-decoration: none;
-    color: ${props => props.col || '#cabdb0'};
+    color: ${props => props.col || TEXT_LIGHT};
     width: 15vw;
     height: 8vh;
     backdrop-filter: blur(15px);
@@ -105,11 +106,11 @@ export const BurgerItemTitle = styled(Link)`
     justify-content: center;
     margin-top: 1.5vh;
     &:hover {
-        border: ${props => props.border || '1px solid #cabdb0'};
+        border: ${props => props.border || `1px solid ${TEXT_LIGHT}`};
     }
     ${props => props.rus && `
         font-weight: 800;
         font-size: 1.3rem;
-        font-family: 'Roboto Flex', sans-serif;
-    `}
+        font-family: ${ROBOTO};
+    `};
 `

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {TEXT_LIGHT, RED, TEXT_DARK, RED_25, RED_45, RED_65, RED_85} from '../../colors/index';
 
 export const TitleWrapper = styled.div`
     display: flex;
@@ -9,42 +10,42 @@ export const TitleWrapper = styled.div`
     cursor: none;
     ${props => props.cursor &&`
         cursor: default;
-    `}
+    `};
 `
 
 export const TitleItem = styled.h1`
     top: 0;
     text-shadow: 2px 2px 15px rgba(255,255,255,0.03);
     @keyframes slidein {
-        0% { color: #ba320009; }
-        25% { color: #ba32003e; }
-        50% { color: #ba32006f; }
-        75% { color: #ba3200b2; }
-        100% {color: #ba3100; }
+        0% { color: ${RED_25}; }
+        25% { color: ${RED_45}; }
+        50% { color: ${RED_65}; }
+        75% { color: ${RED_85}; }
+        100% {color: ${RED}; }
     }
     animation: slidein 300ms;
-    color: ${props => props.color || '#cabdb0'};
+    color: ${props => props.color || TEXT_LIGHT};
     transition-duration: 0s;
     transition-timing-function: easy;
     ${props => props.back&&`
-        background: -webkit-linear-gradient(left, black, #ba3200b2 90%, #ba3100 20%);
+        background: -webkit-linear-gradient(left, ${TEXT_DARK}, ${RED_85} 90%, ${RED} 20%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         top: 50;
-    `}
+    `};
 `
 
 export const Line = styled.div`
     display: inline;
     height: 6vh;
     width: 1px;
-    background: black;
+    background: ${TEXT_DARK};
     margin-top: 1.7vh;
     ${props => props.secframe&&`
         @keyframes glowing {
             from { background: #00000020; }
-            to {background: black; }
+            to {background: ${TEXT_DARK}; }
         }
         animation: glowing 900ms infinite;
-    `}
+    `};
 `

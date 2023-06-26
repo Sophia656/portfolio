@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DARK } from '../../colors';
+import { BACK_DARK } from '../../colors';
 import { BurgerItem, BurgerItemBottom, BurgerItemTitle, BurgerItemTop, BurgerMenu, BurgerWrapper, Wrapper } from './styled';
 import contacts from '../../images/web/contacts_page2.jpg';
 import doc from '../../images/web/documental_page2.jpg';
@@ -27,8 +27,8 @@ const Burger = ({currentPage, setCurrentPage}) => {
     return (
     <Wrapper>
         <BurgerWrapper  onClick={() => setActive(!active)} onMouseEnter={() => setShowSeries(false)}>
-            <BurgerItemTop dotback={changeDots ? DARK : ''} active={active} />
-            <BurgerItemBottom dotback={changeDots ? DARK : ''} active={active} />
+            <BurgerItemTop dotback={changeDots ? BACK_DARK : ''} active={active} />
+            <BurgerItemBottom dotback={changeDots ? BACK_DARK : ''} active={active} />
         </BurgerWrapper>
         <BurgerMenu  active={active}>
             <BurgerItem backimg={`url(${overview})`}>

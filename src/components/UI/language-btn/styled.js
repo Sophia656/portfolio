@@ -14,4 +14,5 @@ export const Btn = styled.div`
     color: #cabdb0;
     font-size: 1.2rem;
     z-index: 500;
+    cursor: pointer;
 `

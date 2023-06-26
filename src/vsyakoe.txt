@@ -159,6 +159,26 @@ export const ContentItem = styled(Link)`
   // }, [scrollTop]);
 
 
+---------------------------------------------
+
+
+  // const [openCurrentImg, setOpenCurrentImg] = useState(false)
+
+  // useEffect(() => {
+  //   document.addEventListener('scroll', scrollHandler)
+  //   return function() {
+  //     document.removeEventListener('scroll', scrollHandler)
+  //   }
+  // }, [])
+
+  // const scrollHandler = (e) => {
+  //   console.log('scroll')
+  // //   console.log('общая высота стр с уч скроолла: ', e.target.documentElement.scrollHeight)
+  // //   console.log('тек полож скролла от верха стр: ', e.target.documentElement.scrollTop)
+  // //   console.log('высота видимой области стр: ', window.innerHeight)
+  // }
+
+
 
 ---------------------------------------------
 

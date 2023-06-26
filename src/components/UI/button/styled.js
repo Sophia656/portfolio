@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Image = styled.img`
     position: absolute;
-    // margin-top: 48vh;
     align-item: flex-start;
     z-index: ${props => props.zi || '30'};
     right: ${props => props.r || 'none'};
@@ -13,10 +12,6 @@ export const Image = styled.img`
     cursor: pointer;
     opacity: 0;
     margin-top: 49vh;
-    // display: ${props => props.show || 'block'};
-    // right: ${props => props.r || 'none'};
-    // left: ${props => props.l || 'none'};
-    // display: ${props => props.display || 'block'};
     rotate: ${props => props.rotate || 'none'};
     ${props => props.visible&&`
         @keyframes arrow {
@@ -70,5 +65,5 @@ export const Image = styled.img`
         
         }
         animation: arrow 1300ms ease-in-out 0s infinite alternate-reverse backwards;
-    `}
+    `};
 `

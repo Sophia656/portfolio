@@ -2,31 +2,12 @@ import React, { useContext } from 'react';
 import { PagesContext } from '../../components/context/context';
 import MyImage from '../../components/UI/image/MyImage';
 import { ImageLineWrapper, PhotosLine, Title, Wrapper } from './styled';
-import { useEffect } from 'react';
-import { useRef } from 'react';
 
 const OverviewPage = () => {
-    const { rus, openCurrentImg, setOpenCurrentImg } = useContext(PagesContext)
+    const { rus } = useContext(PagesContext)
 
-    const ref = useRef(null)
-    // useEffect(() => {
-    //     // if (ref !== null) {
-    //         ref.current.addEventListener('scroll', scrollHandler)
-    //         return function() {
-    //           ref.current.removeEventListener('scroll', scrollHandler)
-    //         }
-    //     // }
-        
-    //   }, [])
-    
-    //   const scrollHandler = (e) => {
-    //     console.log('scroll over')
-    //   //   console.log('общая высота стр с уч скроолла: ', e.target.documentElement.scrollHeight)
-    //   //   console.log('тек полож скролла от верха стр: ', e.target.documentElement.scrollTop)
-    //   //   console.log('высота видимой области стр: ', window.innerHeight)
-    //   }
     return (
-        <Wrapper ref={ref}>
+        <Wrapper>
             <Title rus={rus}>{rus ? 'ОБЩИЙ ОБЗОР' : 'OVERVIEW'}</Title>
             <PhotosLine>
                 <ImageLineWrapper mt='5vh'>
@@ -36,7 +17,6 @@ const OverviewPage = () => {
                     hw='30vw'
                     ml=''
                     cr_year='2023'
-                    cr_mt='15vh'
                     />
                     <MyImage
                     link={require('../../images/web/overview/2.jpg')}
@@ -44,7 +24,6 @@ const OverviewPage = () => {
                     hw='35vw'
                     ml=''
                     cr_year='2022'
-                    cr_mt='15vh'
                     />
                     <MyImage
                     link={require('../../images/web/overview/18.jpg')}
@@ -52,7 +31,6 @@ const OverviewPage = () => {
                     hw='30vw'
                     ml=''
                     cr_year='2023'
-                    cr_mt='15vh'
                     />
                 </ImageLineWrapper>
                 <ImageLineWrapper>
@@ -62,7 +40,6 @@ const OverviewPage = () => {
                     hw='30vw'
                     ml=''
                     cr_year='2021'
-                    cr_mt='15vh'
                     />
                     <MyImage
                     link={require('../../images/web/overview/46.jpg')}
@@ -70,7 +47,6 @@ const OverviewPage = () => {
                     hw='35vw'
                     ml=''
                     cr_year='2021'
-                    cr_mt='15vh'
                     />
                     <MyImage
                     link={require('../../images/web/overview/5.jpg')}
@@ -78,7 +54,6 @@ const OverviewPage = () => {
                     hw='30vw'
                     ml=''
                     cr_year='2022'
-                    cr_mt='15vh'
                     />
                 </ImageLineWrapper>
                 <ImageLineWrapper>
@@ -88,7 +63,6 @@ const OverviewPage = () => {
                     hw='30vw'
                     ml=''
                     cr_year='2023'
-                    cr_mt='15vh'
                     />
                     <MyImage
                     link={require('../../images/web/overview/6.jpg')}
@@ -96,7 +70,6 @@ const OverviewPage = () => {
                     hw='40vw'
                     ml=''
                     cr_year='2022'
-                    cr_mt='15vh'
                     />
                     <MyImage
                     link={require('../../images/web/overview/66.jpg')}
@@ -104,7 +77,6 @@ const OverviewPage = () => {
                     hw='30vw'
                     ml=''
                     cr_year='2023'
-                    cr_mt='15vh'
                     />
                 </ImageLineWrapper>
                 <ImageLineWrapper>
@@ -114,7 +86,6 @@ const OverviewPage = () => {
                     hw='35vw'
                     ml=''
                     cr_year='2022'
-                    cr_mt='15vh'
                     />
                     <MyImage
                     link={require('../../images/web/overview/12.jpg')}
@@ -122,7 +93,6 @@ const OverviewPage = () => {
                     hw='35vw'
                     ml=''
                     cr_year='2021'
-                    cr_mt='15vh'
                     />
                     <MyImage
                     link={require('../../images/web/overview/1.jpg')}
@@ -130,7 +100,6 @@ const OverviewPage = () => {
                     hw='35vw'
                     ml=''
                     cr_year='2022'
-                    cr_mt='15vh'
                     />
                 </ImageLineWrapper>
                 <ImageLineWrapper>
@@ -140,7 +109,6 @@ const OverviewPage = () => {
                     hw='30vw'
                     ml=''
                     cr_year='2021'
-                    cr_mt='15vh'
                     />
                     <MyImage
                     link={require('../../images/web/overview/51.jpg')}
@@ -148,7 +116,6 @@ const OverviewPage = () => {
                     hw='40vw'
                     ml=''
                     cr_year='2022'
-                    cr_mt='15vh'
                     />
                     <MyImage
                     link={require('../../images/web/overview/41.jpg')}
@@ -156,7 +123,6 @@ const OverviewPage = () => {
                     hw='30vw'
                     ml=''
                     cr_year='2021'
-                    cr_mt='15vh'
                     />
                 </ImageLineWrapper>
             </PhotosLine>

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-
+import {BACK_LIGHT, TEXT_DARK, ROBOTO, BAI} from '../../colors/index';
 
 export const Wrapper = styled.div`
     width: 100vw;
     height: 100vh;
-    background: #c3c3c1;
+    background: ${BACK_LIGHT};
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -28,19 +28,19 @@ export const Description = styled.div`
     flex-direction: column;
     align-items: center;
     width: 30vw;
-    color: black;
+    color: ${TEXT_DARK};
 `
 export const DescTitle = styled.div`
     font-size: 2.7rem;
     margin-top: 10vh;
     ${props => props.rus && `
         font-size: 2.6rem;
-        font-family: 'Roboto Flex', sans-serif;
-    `}
+        font-family: ${ROBOTO};
+    `};
 `
 
 export const DescContent = styled.div`
-    color: black;
+    color: ${TEXT_DARK};
     margin-top: 5vh;
     width: 30vw;
     height: 20vh;
@@ -49,21 +49,17 @@ export const DescContent = styled.div`
     align-items: center;
     justify-content: space-evenly;
     ${props => props.rus && `
-        font-family: 'Roboto Flex', sans-serif;
+        font-family: ${ROBOTO};
         font-weight: 200;
-    `}
-`
-
-export const DescLinkWrap = styled.p`
-    color: black;
+    `};
 `
 
 export const DescLink = styled.a`
-    color: black;
+    color: ${TEXT_DARK};
     border-bottom: none;
     text-decoration: none;
     cursor: pointer;
     ${props => props.rus && `
-        font-family: 'Bai Jamjuree', sans-serif;
-    `}
+        font-family: ${BAI};
+    `};
 `

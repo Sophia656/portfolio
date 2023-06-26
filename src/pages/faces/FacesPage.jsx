@@ -17,7 +17,6 @@ const FacesPage = () => {
                         hw='30vw'
                         ml='3vw'
                         cr_year='2022'
-                        cr_mt='10vh'
                         />
                         <MyImage
                         link={require('../../images/web/personal/2.jpg')}
@@ -25,7 +24,6 @@ const FacesPage = () => {
                         hw='30vw'
                         ml='-3vw'
                         cr_year='2021'
-                        cr_mt='10vh'
                         />
                     </ImageLineWrapper>
                     <ImageLineWrapper>
@@ -35,7 +33,6 @@ const FacesPage = () => {
                         hw='30vw'
                         ml='-3vw'
                         cr_year='2022'
-                        cr_mt='10vh'
                         />
                         <MyImage
                         link={require('../../images/web/personal/7.jpg')}
@@ -43,7 +40,6 @@ const FacesPage = () => {
                         hw='54vw'
                         ml='3vw'
                         cr_year='2022'
-                        cr_mt='10vh'
                         />
                     </ImageLineWrapper>
                     <ImageLineWrapper>
@@ -53,7 +49,6 @@ const FacesPage = () => {
                         hw='30vw'
                         ml='-3vw'
                         cr_year='2022'
-                        cr_mt='10vh'
                         />
                         <MyImage
                         link={require('../../images/web/personal/4.jpg')}
@@ -61,10 +56,8 @@ const FacesPage = () => {
                         hw='54vw'
                         ml='3vw'
                         cr_year='2022'
-                        cr_mt='10vh'
                         />
                     </ImageLineWrapper>
-                    
                 </PhotosLine>
         </Wrapper>
     );

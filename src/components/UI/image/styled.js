@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {TEXT_LIGHT, DARK_GRAY, BROWN_GRAY, ROBOTO} from '../../../colors/index';
 
 export const ImageWrapper = styled.div`
     display: flex;
@@ -22,7 +23,7 @@ export const ImageItem = styled.img`
 `
 
 export const ImageDescription = styled.div`
-    color: #cabdb0;
+    color: ${TEXT_LIGHT};
     text-align: center;
     margin-right: 1.5vw;
     margin-top: 2vh;
@@ -31,22 +32,22 @@ export const ImageDescription = styled.div`
     transition-timing-function: easy-in;
     ${props => props.showdesc&&`
         opacity: 1;
-    `}
+    `};
     ${props => props.rus && `
-        font-family: 'Roboto Flex', sans-serif;
-    `}
+        font-family: ${ROBOTO};
+    `};
 `
 
 export const ImgLoaderWrapper = styled.div`
-    background: #0a0602;
-    box-shadow: 0 -200px 100px -120px #0a0602 inset;
+    background: ${DARK_GRAY};
+    box-shadow: 0 -200px 100px -120px ${DARK_GRAY} inset;
     animation: background 3s infinite alternate;
 
 
     @keyframes background {
         50% {
-        background: #24201c;
-        box-shadow: 0 -200px 100px -100px #0a0602 inset;
+        background: ${BROWN_GRAY};
+        box-shadow: 0 -200px 100px -100px ${DARK_GRAY} inset;
         }
     }
 
