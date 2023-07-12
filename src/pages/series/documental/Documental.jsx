@@ -128,7 +128,7 @@ const Documental = () => {
                         cr_year='2020'
                         />
                         <MyImage
-                        link={require('../../../images/web/documental/32.jpg')}
+                        link={require('../../../images/web/documental/6.jpg')}
                         desc={rus ? 'из серии "Летние видения"' : 'from the Summer vision series'}
                         w='42vw'
                         hw='54vw'

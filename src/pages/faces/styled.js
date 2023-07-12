@@ -40,7 +40,7 @@ export const PhotosLine = styled.div`
 
 export const ImageLineWrapper = styled.div`
     width: 100vw;
-    height: 85vh;
+    height: 90vh;
     display: flex;
     flex-wrap: wrap;
     align-items: center;

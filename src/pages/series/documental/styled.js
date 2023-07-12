@@ -35,12 +35,12 @@ export const PhotosLine = styled.div`
     justify-content: space-evenly;
     position: absolute;
     top: 0;
-    margin-top: 20vh;
+    margin-top: 15vh;
 `
 
 export const ImageLineWrapper = styled.div`
     width: 100vw;
-    height: 75vh;
+    height: 90vh;
     display: flex;
     flex-wrap: wrap;
     align-items: center;

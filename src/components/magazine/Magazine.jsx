@@ -142,10 +142,13 @@ const Magazine = ({children}) => {
     }
 
     useEffect(() => {
-        setTimeout(() => {
-            setShowBurger(true)
-        }, 8700);
-    }, [])
+        if (!testAgeModal) {
+            setTimeout(() => {
+                setShowBurger(true)
+            }, 8700);
+        }
+        
+    }, [testAgeModal])
 
     useEffect(() => {
         if (currentPage === 0) {
